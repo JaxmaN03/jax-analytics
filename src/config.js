@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
   
   // Static hosting contact email placeholder
   // Note: Set your actual production email address here when ready
-  contactEmail: "jackson@jaxsanalytics.example.com",
+  contactEmail: "jackson@jaxsanalytics.com",
   isEmailPlaceholder: false,
 
   // GitHub profile - populated with repository owner URL
