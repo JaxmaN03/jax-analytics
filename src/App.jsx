@@ -5,6 +5,7 @@ import Services from './components/Services.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
+import Testimonials from './components/Testimonials.jsx';
 import Footer from './components/Footer.jsx';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Services onSelectService={handleSelectService} />
         <Portfolio onDiscussProject={handleSelectService} />
         <About onConnectClick={handleSelectService} />
+        <Testimonials />
         <Contact preselectedService={selectedService} />
       </main>
 
