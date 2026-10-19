@@ -77,18 +77,7 @@ Looking forward to your reply.
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    // Launch default email client
-    try {
-      if (
-        typeof window !== 'undefined' &&
-        window.location &&
-        !navigator.userAgent?.includes('jsdom')
-      ) {
-        window.location.href = getMailtoUrl();
-      }
-    } catch {
-      // Handled in environments where location navigation is restricted
-    }
+
   };
 
   const handleCopyBrief = () => {
@@ -137,16 +126,13 @@ Looking forward to your reply.
                 <span>Direct Contact Options</span>
               </h3>
               <p className="text-xs text-[#94A3B8] mb-6 leading-relaxed">
-                Send project specs directly via your email client or submit the form for automatic project brief compilation.
+                Email Jackson directly, or use the form to prepare a project brief you can send.
               </p>
 
               {/* Email Address Display */}
               <div className="p-4 rounded-xl bg-[#0B0F19] border border-slate-800 mb-6 space-y-2">
                 <div className="flex items-center justify-between text-xs text-[#94A3B8]">
                   <span className="font-mono uppercase tracking-wider text-[10px]">Contact Email</span>
-                  <span className="text-amber-400 font-mono text-[10px] bg-amber-400/10 px-2 py-0.5 rounded">
-                    Config Placeholder
-                  </span>
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-mono text-white break-all">
@@ -162,9 +148,6 @@ Looking forward to your reply.
                     {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                   </button>
                 </div>
-                <p className="text-[10px] text-slate-500">
-                  Update <code className="text-slate-400">contactEmail</code> in <code className="text-slate-400">src/config.js</code> to link your domain inbox.
-                </p>
               </div>
 
               {/* Direct Mailto Button */}
@@ -172,7 +155,7 @@ Looking forward to your reply.
                 href={`mailto:${SITE_CONFIG.contactEmail}?subject=Project%20Inquiry%20-%20Jax's%20Analytics`}
                 className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#0B0F19] border border-slate-700 hover:border-[#00D9FF] text-xs font-semibold text-[#00D9FF] hover:text-white transition-all mb-4"
               >
-                <span>Launch Email App Directly</span>
+                <span>Email Jackson</span>
                 <ExternalLink className="w-3.5 h-3.5 ml-2" />
               </a>
 
@@ -222,7 +205,7 @@ Looking forward to your reply.
                       Project Brief Prepared!
                     </h3>
                     <p className="text-sm text-[#94A3B8] max-w-md mx-auto">
-                      Your project brief has been compiled into a formatted message. Click below to open your email client or copy the brief to paste into webmail (Gmail, Outlook, etc.).
+                      Your inquiry has not been sent. Open your email app and press Send, or copy the brief into an email addressed to Jackson.
                     </p>
                   </div>
 
@@ -265,7 +248,7 @@ Looking forward to your reply.
                       onClick={() => setSubmitted(false)}
                       className="text-xs text-[#00D9FF] hover:underline"
                     >
-                      &larr; Edit Details or Submit Another Inquiry
+                      &larr; Edit Your Inquiry
                     </button>
                   </div>
                 </div>
@@ -392,7 +375,7 @@ Looking forward to your reply.
                       className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl text-base font-bold text-black bg-[#00D9FF] shadow-[0_0_25px_rgba(0,217,255,0.4)] hover:bg-[#33E0FF] hover:shadow-[0_0_30px_rgba(0,217,255,0.6)] active:scale-98 transition-all duration-200"
                     >
                       <Send className="w-5 h-5 mr-2" />
-                      <span>Request Your Project Quote</span>
+                      <span>Prepare Inquiry Email</span>
                     </button>
                   </div>
 
@@ -400,7 +383,7 @@ Looking forward to your reply.
                   <div className="flex items-start gap-2.5 p-3 rounded-xl bg-[#0B0F19]/60 border border-slate-800 text-[11px] text-[#94A3B8]">
                     <Info className="w-4 h-4 text-[#00D9FF] shrink-0 mt-0.5" />
                     <span>
-                      Direct client-side dispatch. Submitting formats your project specifications and launches your email client without intermediate trackers or third-party database storage.
+                      This form prepares an email; it does not send your inquiry. On the next screen, open your email app or copy the brief, then send it to Jackson.
                     </span>
                   </div>
 

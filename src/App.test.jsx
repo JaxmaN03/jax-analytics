@@ -168,13 +168,13 @@ describe('Jax\'s Analytics Website', () => {
       expect(screen.getByLabelText(/service needed/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/desired timeline/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/project description/i)).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /request your project quote/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /prepare inquiry email/i })).toBeInTheDocument();
     });
 
-    it('displays configuration placeholder email address with transparent notice', () => {
+    it('displays contact email without configuration placeholder', () => {
       render(<App />);
       expect(screen.getByText(SITE_CONFIG.contactEmail)).toBeInTheDocument();
-      expect(screen.getByText(/config placeholder/i)).toBeInTheDocument();
+      expect(screen.queryByText(/config placeholder/i)).not.toBeInTheDocument();
     });
 
     it('submits form client-side to compile project brief without breaking static hosting', () => {
@@ -186,7 +186,7 @@ describe('Jax\'s Analytics Website', () => {
         target: { value: 'Need help automating monthly Excel sales spreadsheets.' },
       });
 
-      fireEvent.click(screen.getByRole('button', { name: /request your project quote/i }));
+      fireEvent.click(screen.getByRole('button', { name: /prepare inquiry email/i }));
 
       expect(screen.getByText('Project Brief Prepared!')).toBeInTheDocument();
       expect(screen.getByRole('link', { name: /open in email app/i })).toBeInTheDocument();

@@ -40,7 +40,7 @@ export default function Services({ onSelectService }) {
             Core Data & Analytics Services
           </h2>
           <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
-            From formula-heavy spreadsheet overhauls to dynamic visual reporting and Python-driven automation pipelines. Transparent starting rates with tailored project scopes.
+            Fix a spreadsheet, understand business performance, or automate a recurring report. Choose a service below to see what you can receive.
           </p>
         </div>
 
@@ -55,11 +55,6 @@ export default function Services({ onSelectService }) {
                   : 'border-slate-800 hover:border-slate-700 hover:shadow-xl'
               } group`}
             >
-              {service.isPopular && (
-                <div className="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-gradient-to-r from-[#00D9FF] to-[#8B5CF6] text-black text-[11px] font-bold uppercase tracking-wider shadow-md">
-                  Most Requested
-                </div>
-              )}
 
               <div>
                 {/* Icon & Starting Price Header */}
@@ -85,6 +80,11 @@ export default function Services({ onSelectService }) {
                   {service.description}
                 </p>
 
+                <div className="mb-6 rounded-xl bg-[#0B0F19] p-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Typical deliverable</h4>
+                  <p className="text-sm text-slate-300 leading-relaxed">{service.deliverable}</p>
+                  <p className="text-xs text-[#94A3B8] mt-3">{service.pricingNote} We agree the exact deliverables before work begins.</p>
+                </div>
                 {/* Capabilities List */}
                 <div className="pt-4 border-t border-slate-800/80 mb-6">
                   <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3">
