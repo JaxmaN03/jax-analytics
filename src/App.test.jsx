@@ -53,12 +53,17 @@ describe('Jax\'s Analytics Website', () => {
       expect(screen.getByRole('button', { name: /explore services/i })).toBeInTheDocument();
     });
 
-    it('renders animated dashboard illustration clearly marked as illustrative', () => {
+    it('shows verified sample results and the real reporting workflow', () => {
       render(<App />);
-      const illustrativeBadges = screen.getAllByText(/illustrative demo data/i);
-      expect(illustrativeBadges.length).toBeGreaterThan(0);
-      expect(screen.getByText(/simulated trajectory/i)).toBeInTheDocument();
-      expect(screen.getByText(/\$128\.4K/i)).toBeInTheDocument();
+      expect(screen.getByText('Reporting Tool Demo')).toBeInTheDocument();
+      expect(screen.getByText('$13,625')).toBeInTheDocument();
+      expect(screen.queryByText('48 hrs')).not.toBeInTheDocument();
+      expect(screen.queryByText('99.8%')).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: 'How It Works' }));
+      expect(screen.getByText('From source file to usable reports')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'How It Works' })).toHaveAttribute('aria-pressed', 'true');
+      fireEvent.click(screen.getByRole('button', { name: 'Sample Results' }));
+      expect(screen.getByText('Sample sales by category')).toBeInTheDocument();
     });
   });
 
