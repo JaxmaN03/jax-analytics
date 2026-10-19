@@ -90,26 +90,27 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('4. Portfolio Section', () => {
-    it('renders 3 planned demonstration project cards marked "Coming Soon"', () => {
+    it('renders two planned projects and a downloadable reporting tool', () => {
       render(<App />);
       expect(screen.getByText('Business Financial Dashboard')).toBeInTheDocument();
       expect(screen.getByText('Property Management Analytics')).toBeInTheDocument();
-      expect(screen.getByText('Automated Data Reporting')).toBeInTheDocument();
+      expect(screen.getByText('Excel Data Cleanup & Reporting Tool')).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: /download tool & sample data/i })).toHaveAttribute('href', expect.stringContaining('downloads/jax-analytics-report-tool.zip'));
 
       const comingSoonBadges = screen.getAllByText('Coming Soon');
-      expect(comingSoonBadges.length).toBeGreaterThanOrEqual(3);
+      expect(comingSoonBadges.length).toBe(2);
     });
 
     it('includes attractive preview illustrations with fictional data labels', () => {
       render(<App />);
       const fictionalDataLabels = screen.getAllByText(/fictional data/i);
-      expect(fictionalDataLabels.length).toBeGreaterThanOrEqual(3);
+      expect(fictionalDataLabels.length).toBeGreaterThanOrEqual(2);
     });
 
     it('allows opening concept architecture modal without fake download links', () => {
       render(<App />);
       const exploreBtns = screen.getAllByRole('button', { name: /explore concept architecture/i });
-      expect(exploreBtns.length).toBe(3);
+      expect(exploreBtns.length).toBe(2);
 
       fireEvent.click(exploreBtns[0]);
       expect(screen.getByRole('dialog')).toBeInTheDocument();

@@ -11,6 +11,7 @@ import {
   X,
   CheckCircle2,
 } from 'lucide-react';
+import ReportingDemo from './ReportingDemo.jsx';
 import { PORTFOLIO_PROJECTS } from '../config.js';
 
 export default function Portfolio({ onDiscussProject }) {
@@ -37,16 +38,17 @@ export default function Portfolio({ onDiscussProject }) {
             <span>Demonstration Gallery</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Planned Technical Demonstrations
+            Tools & Technical Demonstrations
           </h2>
           <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
-            Hands-on prototypes showcasing analytical methods, dynamic Excel models, and automated data pipelines. All previews use strictly illustrative, fictional demonstration datasets.
+            Explore a working reporting tool and upcoming project concepts. All demonstrations use fictional data.
           </p>
         </div>
 
-        {/* 3 Portfolio Project Cards */}
+        <ReportingDemo />
+        {/* Upcoming project concepts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {PORTFOLIO_PROJECTS.map((project) => (
+          {PORTFOLIO_PROJECTS.filter((project) => project.id !== 'automated-reporting').map((project) => (
             <div
               key={project.id}
               className="flex flex-col justify-between rounded-2xl bg-[#151C2C] border border-slate-800 hover:border-[#00D9FF]/40 transition-all duration-300 p-6 group hover:shadow-2xl hover:shadow-cyan-950/20"
