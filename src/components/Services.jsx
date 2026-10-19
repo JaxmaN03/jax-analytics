@@ -44,6 +44,16 @@ export default function Services({ onSelectService }) {
           </p>
         </div>
 
+        <div className="mb-10 rounded-2xl bg-[#151C2C] border border-[#00D9FF]/25 p-6 sm:p-8">
+          <h3 className="text-xl font-bold text-white mb-3">Experience with Nonprofit Data</h3>
+          <p className="text-base text-slate-300 leading-relaxed max-w-4xl">
+            Extensive hands-on experience working with nonprofit organization data, including donor records, data cleanup, segmentation, giving analysis, and reporting.
+          </p>
+          <p className="text-sm text-[#94A3B8] leading-relaxed mt-3">
+            Practical support for turning complex nonprofit data into organized records and clear, usable reports.
+          </p>
+        </div>
+
         {/* 3 Primary Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {SERVICES.map((service) => (

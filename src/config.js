@@ -173,3 +173,8 @@ export const ABOUT_INFO = {
     },
   ],
 };
+
+// Add only the exact quote and attribution approved for public display.
+// Entry fields: quote, name, title, organization, approvedForPublication: true.
+// Empty until a real testimonial is available; the public section stays hidden.
+export const TESTIMONIALS = [];
