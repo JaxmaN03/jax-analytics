@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
   
   // Static hosting contact email placeholder
   // Note: Set your actual production email address here when ready
-  contactEmail: "jackson@jaxsanalytics.com",
+  contactEmail: "jacksonjmiller03@gmail.com",
   isEmailPlaceholder: false,
 
   // GitHub profile - populated with repository owner URL
@@ -43,7 +43,7 @@ export const SERVICES = [
     pricing: "Starting at $100",
     startingPrice: "$100",
     pricingNote: "Final pricing depends on project scope and spreadsheet complexity.",
-    featuredMetric: "Save 5-15 hrs/week",
+    deliverable: "A cleaned or repaired Excel workbook, with formula notes and instructions for updating it.",
   },
   {
     id: "analysis",
@@ -61,8 +61,8 @@ export const SERVICES = [
     pricing: "Starting at $250",
     startingPrice: "$250",
     pricingNote: "Customized according to data volume, source systems, and reporting depth.",
-    featuredMetric: "Real-time Clarity",
-    isPopular: true,
+    deliverable: "A dashboard or reporting workbook with agreed KPIs, documented calculations, and an update guide.",
+
   },
   {
     id: "python",
@@ -80,7 +80,7 @@ export const SERVICES = [
     pricing: "Custom Quote",
     startingPrice: "Custom Quote",
     pricingNote: "Tailored to your specific file formats, update frequency, and pipeline logic.",
-    featuredMetric: "Eliminate Manual Tasks",
+    deliverable: "A Python script for your agreed workflow, plus setup instructions, sample inputs, and example outputs.",
   },
 ];
 
