@@ -36,7 +36,7 @@ export default function Services({ onSelectService, onSelectPresentation }) {
             Core Data & Analytics Services
           </h2>
           <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed">
-            Fix a spreadsheet, understand business performance, or automate a recurring report. Choose a service below to see what you can receive.
+            Fix your spreadsheet, understand your performance, or automate a recurring report. Check out our services below to see what works best for your business.
           </p>
         </div>
 
