@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, BarChart3 } from 'lucide-react';
+import { NAV_LINKS, PAGE_URLS } from '../navigation.js';
 import { SITE_CONFIG } from '../config.js';
 
-export default function Navbar({ onSelectService }) {
+export default function Navbar({ onSelectService, currentPage }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,30 +15,15 @@ export default function Navbar({ onSelectService }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const navLinks = NAV_LINKS;
 
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
+  const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   const handleGetQuote = (e) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
     if (onSelectService) {
       onSelectService('excel');
     }
@@ -55,7 +41,7 @@ export default function Navbar({ onSelectService }) {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <a
-            href="#home"
+            href={PAGE_URLS.home}
             onClick={(e) => handleLinkClick(e, '#home')}
             className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#00D9FF] rounded-lg p-1"
             aria-label="Jax's Analytics Home"
@@ -82,6 +68,7 @@ export default function Navbar({ onSelectService }) {
               <a
                 key={link.name}
                 href={link.href}
+                aria-current={currentPage === link.id ? 'page' : undefined}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className="text-sm font-medium text-[#94A3B8] hover:text-[#00D9FF] transition-colors duration-200"
               >
@@ -93,7 +80,7 @@ export default function Navbar({ onSelectService }) {
           {/* Right Action Button (Desktop) */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="#contact"
+              href={PAGE_URLS.contact}
               onClick={handleGetQuote}
               className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-black bg-[#00D9FF] rounded-lg shadow-[0_0_20px_rgba(0,217,255,0.4)] hover:shadow-[0_0_25px_rgba(0,217,255,0.7)] hover:bg-[#33E0FF] transition-all duration-200 active:scale-95"
             >
@@ -127,6 +114,7 @@ export default function Navbar({ onSelectService }) {
             <a
               key={link.name}
               href={link.href}
+                aria-current={currentPage === link.id ? 'page' : undefined}
               onClick={(e) => handleLinkClick(e, link.href)}
               className="block px-3 py-2.5 rounded-lg text-base font-medium text-[#94A3B8] hover:text-white hover:bg-[#151C2C] transition-colors"
             >
@@ -135,7 +123,7 @@ export default function Navbar({ onSelectService }) {
           ))}
           <div className="pt-2">
             <a
-              href="#contact"
+              href={PAGE_URLS.contact}
               onClick={handleGetQuote}
               className="w-full flex items-center justify-center px-5 py-3 text-base font-semibold text-black bg-[#00D9FF] rounded-lg shadow-[0_0_15px_rgba(0,217,255,0.4)] hover:bg-[#33E0FF] transition-all duration-200"
             >

@@ -19,10 +19,6 @@ export default function Portfolio({ onDiscussProject }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleDiscussClick = () => {
-    const contactEl = document.querySelector('#contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
     if (onDiscussProject) {
       onDiscussProject('analysis');
     }

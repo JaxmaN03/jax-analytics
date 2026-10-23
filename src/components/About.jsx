@@ -4,10 +4,6 @@ import { ABOUT_INFO, SITE_CONFIG } from '../config.js';
 
 export default function About({ onConnectClick }) {
   const handleConnect = () => {
-    const contactEl = document.querySelector('#contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
     if (onConnectClick) {
       onConnectClick('excel');
     }

@@ -1,18 +1,13 @@
 import React from 'react';
 import { ArrowRight, Sparkles, Database, FileSpreadsheet, Cpu, ChevronRight } from 'lucide-react';
+import { navigate, PAGE_URLS } from '../navigation.js';
 import { SITE_CONFIG } from '../config.js';
 import DashboardIllustration from './DashboardIllustration.jsx';
 
 export default function Hero({ onStartProject }) {
-  const handleScrollTo = (id) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const handleScrollTo = () => navigate(PAGE_URLS.services);
 
   const handleStartProjectClick = () => {
-    handleScrollTo('#contact');
     if (onStartProject) {
       onStartProject('excel');
     }

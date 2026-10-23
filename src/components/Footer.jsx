@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, MapPin, Sparkles } from 'lucide-react';
+import { NAV_LINKS } from '../navigation.js';
 import { SITE_CONFIG } from '../config.js';
 
 function GithubIcon({ className = "w-4 h-4" }) {
@@ -21,21 +22,8 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const navLinks = NAV_LINKS;
 
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-[#0B0F19] border-t border-slate-800 text-[#94A3B8] text-sm relative">
@@ -78,7 +66,6 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
                     className="text-xs text-[#94A3B8] hover:text-[#00D9FF] transition-colors"
                   >
                     {link.name}

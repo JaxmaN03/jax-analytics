@@ -1,3 +1,4 @@
+import { PAGE_URLS } from '../navigation.js';
 import React from 'react';
 import { SITE_CONFIG } from '../config.js';
 
@@ -27,7 +28,7 @@ export default function Process() {
           ))}
         </ol>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-          <a href="#contact" className="inline-flex min-h-11 items-center justify-center px-5 py-3 rounded-lg bg-[#00D9FF] text-black font-semibold hover:bg-[#33E0FF]">Tell me about your project</a>
+          <a href={PAGE_URLS.contact} className="inline-flex min-h-11 items-center justify-center px-5 py-3 rounded-lg bg-[#00D9FF] text-black font-semibold hover:bg-[#33E0FF]">Tell me about your project</a>
           <a href={`mailto:${SITE_CONFIG.contactEmail}?subject=Request%20to%20schedule%20a%20phone%20call&body=Hello%20Jackson%2C%0A%0AI%20would%20like%20to%20schedule%20a%20phone%20call%20about%20my%20project.%0A%0AProject%20overview%3A%0APreferred%20days%20and%20times%3A%0ATime%20zone%3A%0ABest%20phone%20number%3A%0A`} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#00D9FF] hover:underline">Request a phone call by email</a>
         </div>
         <p className="text-xs text-[#94A3B8] mt-4">Call times are confirmed by email. Sending a request does not book an appointment.</p>

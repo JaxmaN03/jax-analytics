@@ -20,10 +20,6 @@ export default function Services({ onSelectService, onSelectPresentation }) {
     if (onSelectService) {
       onSelectService(serviceId);
     }
-    const contactEl = document.querySelector('#contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -141,7 +137,7 @@ export default function Services({ onSelectService, onSelectPresentation }) {
               <p className="text-sm text-slate-300 mt-3 mb-4 flex-1">{addon.description}</p>
               <p className="text-sm text-white mb-2">Up to 10 slides · One revision round</p>
               <p className="text-xs text-[#94A3B8] mb-5">Additional slides: ${addon.extraSlidePrice} each, agreed before work begins.</p>
-              <button type="button" onClick={() => { onSelectPresentation?.(addon.id); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="min-h-11 rounded-lg border border-[#00D9FF]/40 px-4 py-3 text-sm font-semibold text-[#00D9FF] hover:bg-[#00D9FF]/10">Add {addon.id === 'template' ? 'template presentation' : 'custom presentation'} to my quote</button>
+              <button type="button" onClick={() => { onSelectPresentation?.(addon.id); }} className="min-h-11 rounded-lg border border-[#00D9FF]/40 px-4 py-3 text-sm font-semibold text-[#00D9FF] hover:bg-[#00D9FF]/10">Add {addon.id === 'template' ? 'template presentation' : 'custom presentation'} to my quote</button>
             </div>)}
           </div>
           <p className="text-sm text-slate-300 mt-5 leading-relaxed">Both options include editable PowerPoint and PDF files, using the analysis completed in your main project. All created or updated slides count toward the slide limit, including title and closing slides. One revision round covers one consolidated set of changes to the agreed content.</p>

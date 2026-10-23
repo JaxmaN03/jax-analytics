@@ -1,3 +1,4 @@
+import { PAGE_URLS } from '../navigation.js';
 import React, { useState } from 'react';
 import demo from '../nonprofitDemo.json';
 
@@ -55,7 +56,7 @@ export default function NonprofitDemo({ onDiscussProject }) {
           </div>
           <p className="text-xs text-[#94A3B8] leading-relaxed mb-5">PowerPoint charts are editable. The PDF is a static preview. <a download href={`${import.meta.env.BASE_URL}downloads/nonprofit-fictional-data.json`} className="text-[#00D9FF] underline">Inspect the fictional source data (JSON)</a>.</p>
           <button type="button" onClick={onDiscussProject} className="inline-flex min-h-11 items-center rounded-lg bg-[#00D9FF] px-5 py-3 text-sm font-semibold text-black hover:bg-[#33E0FF]">Discuss your nonprofit data</button>
-          <a href="#presentation-addon" className="block mt-4 text-sm text-[#00D9FF] hover:underline">See presentation add-on pricing</a>
+          <a href={`${PAGE_URLS.services}#presentation-addon`} className="block mt-4 text-sm text-[#00D9FF] hover:underline">See presentation add-on pricing</a>
         </div>
         <figure>
           <img loading="lazy" src={`${import.meta.env.BASE_URL}images/nonprofit-presentation-preview.png`} width="1280" height="720" alt="Sample presentation slide with 2025 fictional giving by donor location and acquisition channel." className="w-full h-auto rounded-xl border border-slate-700" />

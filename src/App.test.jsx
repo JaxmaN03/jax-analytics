@@ -1,10 +1,14 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from './App.jsx';
+import { navigate } from './navigation.js';
+vi.mock('./navigation.js', async (importOriginal) => ({ ...(await importOriginal()), navigate: vi.fn() }));
 import { SITE_CONFIG, SERVICES, PORTFOLIO_PROJECTS, ABOUT_INFO } from './config.js';
 
 describe('Jax\'s Analytics Website', () => {
   beforeEach(() => {
+    window.history.replaceState({}, '', '/');
+    vi.clearAllMocks();
     // Mock scrollIntoView
     Element.prototype.scrollIntoView = vi.fn();
     // Mock navigator.clipboard
@@ -68,6 +72,7 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('3. Services Section', () => {
+    beforeEach(() => window.history.replaceState({}, '', '/services.html'));
     it('renders 3 primary service cards with descriptions and starting prices', () => {
       render(<App />);
       expect(screen.getByText('Excel & Spreadsheet Solutions')).toBeInTheDocument();
@@ -95,14 +100,14 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('4. Portfolio Section', () => {
+    beforeEach(() => window.history.replaceState({}, '', '/portfolio.html'));
     it('connects the reporting case study to an analysis inquiry', () => {
       render(<App />);
       const study = screen.getByRole('article', { name: 'Excel Data Cleanup & Reporting Tool' });
       expect(within(study).getByRole('table', { name: /source records before cleanup/i })).toBeInTheDocument();
       expect(within(study).getByRole('table', { name: /category totals after duplicate removal/i })).toBeInTheDocument();
       fireEvent.click(within(study).getByRole('button', { name: /have a similar spreadsheet/i }));
-      expect(screen.getByLabelText(/service needed/i)).toHaveValue('analysis');
-      expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
+      expect(navigate).toHaveBeenCalledWith('/contact.html?service=analysis');
     });
 
     it('renders two planned projects and a downloadable reporting tool', () => {
@@ -138,6 +143,7 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('5. About Section', () => {
+    beforeEach(() => window.history.replaceState({}, '', '/about.html'));
     it('introduces Jackson Miller as the analyst behind Jax\'s Analytics', () => {
       render(<App />);
       expect(screen.getByText('Meet the Analyst.')).toBeInTheDocument();
@@ -170,13 +176,13 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('6. Contact Section', () => {
+    beforeEach(() => window.history.replaceState({}, '', '/contact.html'));
     it('adds a presentation without replacing the selected service and includes it in the email', () => {
+      window.history.replaceState({}, '', '/contact.html?service=python&presentation=template');
       render(<App />);
-      fireEvent.change(screen.getByLabelText(/service needed/i), { target: { value: 'python' } });
-      fireEvent.click(screen.getByRole('button', { name: /add template presentation to my quote/i }));
       expect(screen.getByLabelText(/service needed/i)).toHaveValue('python');
       expect(screen.getByLabelText(/optional powerpoint add-on/i)).toHaveValue('template');
-      fireEvent.click(screen.getByRole('button', { name: /add custom presentation to my quote/i }));
+      fireEvent.change(screen.getByLabelText(/optional powerpoint add-on/i), { target: { value: 'custom' } });
       expect(screen.getByLabelText(/optional powerpoint add-on/i)).toHaveValue('custom');
       fireEvent.change(screen.getByPlaceholderText('Jane Doe'), { target: { value: 'Sample Client' } });
       fireEvent.change(screen.getByPlaceholderText('jane@company.com'), { target: { value: 'sample@example.com' } });
