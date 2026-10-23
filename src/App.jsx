@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import Mission from './components/Mission.jsx';
 import Services from './components/Services.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import About from './components/About.jsx';
@@ -23,6 +24,7 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-1">
         <Hero onStartProject={handleSelectService} />
+        <Mission />
         <Services onSelectService={handleSelectService} />
         <Portfolio onDiscussProject={handleSelectService} />
         <About onConnectClick={handleSelectService} />
