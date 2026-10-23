@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx';
 import Mission from './components/Mission.jsx';
 import Services from './components/Services.jsx';
 import Portfolio from './components/Portfolio.jsx';
+import Process from './components/Process.jsx';
 import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Testimonials from './components/Testimonials.jsx';
@@ -28,6 +29,7 @@ export default function App() {
         <Mission />
         <Services onSelectService={handleSelectService} onSelectPresentation={(id) => setPresentationRequest({ id })} />
         <Portfolio onDiscussProject={handleSelectService} />
+        <Process />
         <About onConnectClick={handleSelectService} />
         <Testimonials />
         <Contact preselectedService={selectedService} presentationRequest={presentationRequest} />

@@ -191,9 +191,9 @@ Looking forward to your reply.
               <h4 className="text-sm font-semibold text-white">What Happens Next?</h4>
               <ol className="space-y-2 text-xs text-[#94A3B8] list-decimal list-inside">
                 <li>I review your requirements, data formats, and goals.</li>
-                <li>We schedule a free consultation or correspond via email.</li>
-                <li>You receive a clear scope document and fixed-price quote.</li>
-                <li>Work begins with regular milestone previews and updates.</li>
+                <li>We correspond by email or arrange a phone call by email.</li>
+                <li>We agree on a written scope and quote. Fixed-price projects are 50% upfront and 50% on delivery.</li>
+                <li>You receive your files and written instructions, with one revision round included within the agreed scope.</li>
               </ol>
             </div>
 
