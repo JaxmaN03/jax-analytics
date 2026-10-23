@@ -11,6 +11,7 @@ import Footer from './components/Footer.jsx';
 
 export default function App() {
   const [selectedService, setSelectedService] = useState('excel');
+  const [presentationRequest, setPresentationRequest] = useState(null);
 
   const handleSelectService = (serviceId) => {
     setSelectedService(serviceId);
@@ -25,11 +26,11 @@ export default function App() {
       <main className="flex-1">
         <Hero onStartProject={handleSelectService} />
         <Mission />
-        <Services onSelectService={handleSelectService} />
+        <Services onSelectService={handleSelectService} onSelectPresentation={(id) => setPresentationRequest({ id })} />
         <Portfolio onDiscussProject={handleSelectService} />
         <About onConnectClick={handleSelectService} />
         <Testimonials />
-        <Contact preselectedService={selectedService} />
+        <Contact preselectedService={selectedService} presentationRequest={presentationRequest} />
       </main>
 
       {/* Footer */}

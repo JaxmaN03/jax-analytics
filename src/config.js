@@ -25,6 +25,11 @@ export const SITE_CONFIG = {
   copyrightYear: 2026,
 };
 
+export const PRESENTATION_ADDONS = [
+  { id: 'template', name: 'Use your PowerPoint template', price: 150, extraSlidePrice: 15, description: 'Populate your existing template with the findings, charts, and tables from your project.' },
+  { id: 'custom', name: 'Create a new presentation', price: 300, extraSlidePrice: 30, description: 'Build a new deck using your brief, audience, key messages, and branding guidelines.' },
+];
+
 export const SERVICES = [
   {
     id: "excel",
@@ -56,13 +61,11 @@ export const SERVICES = [
       "Data visualization",
       "KPI tracking",
       "Custom reports",
-      "PowerPoint template completion",
-      "Custom presentations from a client brief",
     ],
     pricing: "Starting at $250",
     startingPrice: "$250",
     pricingNote: "Customized according to data volume, source systems, and reporting depth.",
-    deliverable: "A dashboard, reporting workbook, or PowerPoint presentation, with agreed metrics and documented calculations. An update guide is included for dashboards and workbooks.",
+    deliverable: "A dashboard or reporting workbook with agreed KPIs, documented calculations, and an update guide.",
 
   },
   {

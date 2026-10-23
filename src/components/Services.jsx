@@ -1,8 +1,8 @@
 import React from 'react';
 import { FileSpreadsheet, BarChart3, Cpu, Check, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
-import { SERVICES } from '../config.js';
+import { SERVICES, PRESENTATION_ADDONS } from '../config.js';
 
-export default function Services({ onSelectService }) {
+export default function Services({ onSelectService, onSelectPresentation }) {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'FileSpreadsheet':
@@ -51,16 +51,6 @@ export default function Services({ onSelectService }) {
           </p>
           <p className="text-sm text-[#94A3B8] leading-relaxed mt-3">
             Practical support for turning complex nonprofit data into organized records and clear, usable reports.
-          </p>
-        </div>
-
-        <div className="mb-10 rounded-2xl bg-[#151C2C]/50 border border-slate-800 p-6 sm:p-8">
-          <h3 className="text-xl font-bold text-white mb-3">Presentation Support</h3>
-          <p className="text-base text-slate-300 leading-relaxed max-w-4xl">
-            Turn your analysis into a presentation your audience can follow. I can populate an existing PowerPoint template with your results, charts, and tables, or create a new presentation from scratch using your brief and guidelines.
-          </p>
-          <p className="text-sm text-[#94A3B8] leading-relaxed mt-3">
-            We agree on the audience, key messages, source data, branding, and slide requirements before work begins. Presentation scope and pricing are quoted for your project.
           </p>
         </div>
 
@@ -138,6 +128,24 @@ export default function Services({ onSelectService }) {
               </div>
             </div>
           ))}
+        </div>
+
+        <div id="presentation-addon" className="mb-12 rounded-2xl bg-[#151C2C] border border-[#00D9FF]/30 p-6 sm:p-8 scroll-mt-24">
+          <p className="text-xs font-mono uppercase tracking-wider text-[#00D9FF] mb-3">Optional add-on for any service</p>
+          <h3 className="text-2xl font-bold text-white mb-3">Your data, ready to present</h3>
+          <p className="text-slate-300 leading-relaxed mb-6 max-w-3xl">Add a PowerPoint presentation to your spreadsheet, data analysis, or Python automation project. Turn the completed results into a clear deck for your team, board, or clients.</p>
+          <div className="grid md:grid-cols-2 gap-5">
+            {PRESENTATION_ADDONS.map((addon) => <div key={addon.id} className="rounded-xl bg-[#0B0F19] border border-slate-700 p-5 flex flex-col">
+              <h4 className="text-lg font-semibold text-white">{addon.name}</h4>
+              <p className="text-3xl font-bold text-[#00D9FF] mt-3">+${addon.price} <span className="text-sm font-normal text-slate-400">USD</span></p>
+              <p className="text-sm text-slate-300 mt-3 mb-4 flex-1">{addon.description}</p>
+              <p className="text-sm text-white mb-2">Up to 10 slides · One revision round</p>
+              <p className="text-xs text-[#94A3B8] mb-5">Additional slides: ${addon.extraSlidePrice} each, agreed before work begins.</p>
+              <button type="button" onClick={() => { onSelectPresentation?.(addon.id); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="min-h-11 rounded-lg border border-[#00D9FF]/40 px-4 py-3 text-sm font-semibold text-[#00D9FF] hover:bg-[#00D9FF]/10">Add {addon.id === 'template' ? 'template presentation' : 'custom presentation'} to my quote</button>
+            </div>)}
+          </div>
+          <p className="text-sm text-slate-300 mt-5 leading-relaxed">Both options include editable PowerPoint and PDF files, using the analysis completed in your main project. All created or updated slides count toward the slide limit, including title and closing slides. One revision round covers one consolidated set of changes to the agreed content.</p>
+          <p className="text-xs text-[#94A3B8] mt-3 leading-relaxed">Prices are added to your main service quote. New analysis, major changes to the brief, advanced animation, and live presentation delivery are quoted separately. We confirm your audience, source data, branding, slide count, and total price before work begins.</p>
         </div>
 
         {/* Pricing Transparency & Scope Notice */}

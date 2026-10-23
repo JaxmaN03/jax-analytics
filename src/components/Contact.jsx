@@ -12,9 +12,9 @@ import {
   MessageSquare,
   ShieldCheck,
 } from 'lucide-react';
-import { SITE_CONFIG, SERVICES } from '../config.js';
+import { SITE_CONFIG, SERVICES, PRESENTATION_ADDONS } from '../config.js';
 
-export default function Contact({ preselectedService }) {
+export default function Contact({ preselectedService, presentationRequest }) {
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
@@ -22,6 +22,7 @@ export default function Contact({ preselectedService }) {
     service: 'excel',
     timeline: '1-2 weeks',
     description: '',
+    presentation: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -39,6 +40,14 @@ export default function Contact({ preselectedService }) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  useEffect(() => {
+    if (presentationRequest) {
+      setFormData((prev) => ({ ...prev, presentation: presentationRequest.id }));
+    }
+  }, [presentationRequest]);
+
+  const presentation = PRESENTATION_ADDONS.find((addon) => addon.id === formData.presentation);
 
   const serviceNames = {
     excel: 'Excel & Spreadsheet Solutions',
@@ -58,6 +67,7 @@ Business Name: ${formData.businessName || 'None provided'}
 Contact Email: ${formData.email || 'Not specified'}
 Service Needed: ${serviceNames[formData.service] || formData.service}
 Desired Timeline: ${formData.timeline}
+Presentation Add-on: ${presentation ? `${presentation.name} (+$${presentation.price} USD, up to 10 slides, one revision round; additional slides $${presentation.extraSlidePrice} each)` : 'None requested'}
 
 --- PROJECT DESCRIPTION ---
 ${formData.description || 'No description provided.'}
@@ -330,6 +340,15 @@ Looking forward to your reply.
                       </select>
                     </div>
 
+                  </div>
+
+                  <div>
+                    <label htmlFor="presentation" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Optional PowerPoint add-on</label>
+                    <select id="presentation" name="presentation" value={formData.presentation} onChange={handleChange} aria-describedby="presentation-scope" className="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-700 text-white text-sm focus:border-[#00D9FF] focus:outline-none">
+                      <option value="">No presentation add-on</option>
+                      {PRESENTATION_ADDONS.map((addon) => <option key={addon.id} value={addon.id}>{addon.name} (+${addon.price} USD)</option>)}
+                    </select>
+                    <p id="presentation-scope" className="text-xs text-[#94A3B8] mt-2 leading-relaxed">Available with any service. Up to 10 slides, editable PowerPoint and PDF, and one revision round. Added to the main project price. {presentation ? `Additional slides: $${presentation.extraSlidePrice} each. ` : ''}Final scope and total confirmed before work begins.</p>
                   </div>
 
                   {/* Desired Timeline */}

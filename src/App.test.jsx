@@ -170,6 +170,28 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('6. Contact Section', () => {
+    it('adds a presentation without replacing the selected service and includes it in the email', () => {
+      render(<App />);
+      fireEvent.change(screen.getByLabelText(/service needed/i), { target: { value: 'python' } });
+      fireEvent.click(screen.getByRole('button', { name: /add template presentation to my quote/i }));
+      expect(screen.getByLabelText(/service needed/i)).toHaveValue('python');
+      expect(screen.getByLabelText(/optional powerpoint add-on/i)).toHaveValue('template');
+      fireEvent.click(screen.getByRole('button', { name: /add custom presentation to my quote/i }));
+      expect(screen.getByLabelText(/optional powerpoint add-on/i)).toHaveValue('custom');
+      fireEvent.change(screen.getByPlaceholderText('Jane Doe'), { target: { value: 'Sample Client' } });
+      fireEvent.change(screen.getByPlaceholderText('jane@company.com'), { target: { value: 'sample@example.com' } });
+      fireEvent.change(screen.getByLabelText(/project description/i), { target: { value: 'Automate my report and prepare a deck.' } });
+      fireEvent.click(screen.getByRole('button', { name: /prepare inquiry email/i }));
+      const email = screen.getByRole('link', { name: /open in email app/i }).getAttribute('href');
+      const body = new URLSearchParams(email.split('?')[1]).get('body');
+      expect(body).toContain('Service Needed: Python Automation');
+      expect(body).toContain('Create a new presentation (+$300 USD');
+      fireEvent.click(screen.getByRole('button', { name: /edit your inquiry/i }));
+      fireEvent.change(screen.getByLabelText(/optional powerpoint add-on/i), { target: { value: '' } });
+      fireEvent.click(screen.getByRole('button', { name: /prepare inquiry email/i }));
+      expect(screen.getByText(/Presentation Add-on: None requested/)).toBeInTheDocument();
+    });
+
     it('renders heading and free consultation note', () => {
       render(<App />);
       expect(screen.getByText("Let's Make Your Data Work for You.")).toBeInTheDocument();
