@@ -1,0 +1,106 @@
+{
+  "fictional": true,
+  "period": "2025",
+  "donors": 24,
+  "total": 41550,
+  "cohorts": [
+    {
+      "name": "Matures",
+      "donors": 6,
+      "total": 14850
+    },
+    {
+      "name": "Baby Boomers",
+      "donors": 6,
+      "total": 14100
+    },
+    {
+      "name": "Generation X",
+      "donors": 6,
+      "total": 8400
+    },
+    {
+      "name": "Millennials",
+      "donors": 6,
+      "total": 4200
+    }
+  ],
+  "cities": [
+    {
+      "name": "Tulsa",
+      "donors": 8,
+      "total": 22300
+    },
+    {
+      "name": "Broken Arrow",
+      "donors": 8,
+      "total": 12800
+    },
+    {
+      "name": "Owasso",
+      "donors": 4,
+      "total": 5100
+    },
+    {
+      "name": "Other Oklahoma",
+      "donors": 4,
+      "total": 1350
+    }
+  ],
+  "channels": [
+    {
+      "name": "Referral",
+      "donors": 8,
+      "total": 20000
+    },
+    {
+      "name": "Community event",
+      "donors": 8,
+      "total": 12800
+    },
+    {
+      "name": "Website",
+      "donors": 8,
+      "total": 8750
+    }
+  ],
+  "years": [
+    {
+      "year": 2023,
+      "total": 34920
+    },
+    {
+      "year": 2024,
+      "total": 38235
+    },
+    {
+      "year": 2025,
+      "total": 41550
+    }
+  ],
+  "topDonors": [
+    {
+      "id": "D001",
+      "total": 5400
+    },
+    {
+      "id": "D007",
+      "total": 5000
+    },
+    {
+      "id": "D002",
+      "total": 3600
+    },
+    {
+      "id": "D008",
+      "total": 3500
+    },
+    {
+      "id": "D013",
+      "total": 3000
+    }
+  ],
+  "topFiveTotal": 20500,
+  "topFiveShare": 0.49338146811071,
+  "growth": 0.18986254295532645
+}

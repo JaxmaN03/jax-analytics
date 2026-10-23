@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import ReportingDemo from './ReportingDemo.jsx';
+import NonprofitDemo from './NonprofitDemo.jsx';
 import { PORTFOLIO_PROJECTS } from '../config.js';
 
 export default function Portfolio({ onDiscussProject }) {
@@ -45,6 +46,7 @@ export default function Portfolio({ onDiscussProject }) {
           </p>
         </div>
 
+        <NonprofitDemo onDiscussProject={handleDiscussClick} />
         <ReportingDemo onDiscussProject={handleDiscussClick} />
         {/* Upcoming project concepts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">

@@ -1,0 +1,293 @@
+{
+  "disclosure": "Entirely fictional demonstration. No client, employer, donor, or PGD records. Annual donor giving in USD, not individual transactions. City is donor location. Acquisition channel is an assigned first-source field, not campaign ROI. Same 24 donors appear in all three years.",
+  "donors": [
+    {
+      "id": "D001",
+      "birthYear": 1940,
+      "cohort": "Matures",
+      "city": "Tulsa",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 6000,
+        "2024": 5700,
+        "2025": 5400
+      }
+    },
+    {
+      "id": "D002",
+      "birthYear": 1941,
+      "cohort": "Matures",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 4000,
+        "2024": 3800,
+        "2025": 3600
+      }
+    },
+    {
+      "id": "D003",
+      "birthYear": 1942,
+      "cohort": "Matures",
+      "city": "Tulsa",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 3000,
+        "2024": 2850,
+        "2025": 2700
+      }
+    },
+    {
+      "id": "D004",
+      "birthYear": 1943,
+      "cohort": "Matures",
+      "city": "Owasso",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 2000,
+        "2024": 1900,
+        "2025": 1800
+      }
+    },
+    {
+      "id": "D005",
+      "birthYear": 1944,
+      "cohort": "Matures",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 1000,
+        "2024": 950,
+        "2025": 900
+      }
+    },
+    {
+      "id": "D006",
+      "birthYear": 1945,
+      "cohort": "Matures",
+      "city": "Other Oklahoma",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 500,
+        "2024": 475,
+        "2025": 450
+      }
+    },
+    {
+      "id": "D007",
+      "birthYear": 1955,
+      "cohort": "Baby Boomers",
+      "city": "Tulsa",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 4000,
+        "2024": 4500,
+        "2025": 5000
+      }
+    },
+    {
+      "id": "D008",
+      "birthYear": 1956,
+      "cohort": "Baby Boomers",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 2800,
+        "2024": 3150,
+        "2025": 3500
+      }
+    },
+    {
+      "id": "D009",
+      "birthYear": 1957,
+      "cohort": "Baby Boomers",
+      "city": "Tulsa",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 2000,
+        "2024": 2250,
+        "2025": 2500
+      }
+    },
+    {
+      "id": "D010",
+      "birthYear": 1958,
+      "cohort": "Baby Boomers",
+      "city": "Owasso",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 1440,
+        "2024": 1620,
+        "2025": 1800
+      }
+    },
+    {
+      "id": "D011",
+      "birthYear": 1959,
+      "cohort": "Baby Boomers",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 720,
+        "2024": 810,
+        "2025": 900
+      }
+    },
+    {
+      "id": "D012",
+      "birthYear": 1960,
+      "cohort": "Baby Boomers",
+      "city": "Other Oklahoma",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 320,
+        "2024": 360,
+        "2025": 400
+      }
+    },
+    {
+      "id": "D013",
+      "birthYear": 1972,
+      "cohort": "Generation X",
+      "city": "Tulsa",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 1800,
+        "2024": 2400,
+        "2025": 3000
+      }
+    },
+    {
+      "id": "D014",
+      "birthYear": 1973,
+      "cohort": "Generation X",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 1200,
+        "2024": 1600,
+        "2025": 2000
+      }
+    },
+    {
+      "id": "D015",
+      "birthYear": 1974,
+      "cohort": "Generation X",
+      "city": "Tulsa",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 900,
+        "2024": 1200,
+        "2025": 1500
+      }
+    },
+    {
+      "id": "D016",
+      "birthYear": 1975,
+      "cohort": "Generation X",
+      "city": "Owasso",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 600,
+        "2024": 800,
+        "2025": 1000
+      }
+    },
+    {
+      "id": "D017",
+      "birthYear": 1976,
+      "cohort": "Generation X",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 360,
+        "2024": 480,
+        "2025": 600
+      }
+    },
+    {
+      "id": "D018",
+      "birthYear": 1977,
+      "cohort": "Generation X",
+      "city": "Other Oklahoma",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 180,
+        "2024": 240,
+        "2025": 300
+      }
+    },
+    {
+      "id": "D019",
+      "birthYear": 1988,
+      "cohort": "Millennials",
+      "city": "Tulsa",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 750,
+        "2024": 1125,
+        "2025": 1500
+      }
+    },
+    {
+      "id": "D020",
+      "birthYear": 1989,
+      "cohort": "Millennials",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 500,
+        "2024": 750,
+        "2025": 1000
+      }
+    },
+    {
+      "id": "D021",
+      "birthYear": 1990,
+      "cohort": "Millennials",
+      "city": "Tulsa",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 350,
+        "2024": 525,
+        "2025": 700
+      }
+    },
+    {
+      "id": "D022",
+      "birthYear": 1991,
+      "cohort": "Millennials",
+      "city": "Owasso",
+      "acquisitionChannel": "Referral",
+      "giving": {
+        "2023": 250,
+        "2024": 375,
+        "2025": 500
+      }
+    },
+    {
+      "id": "D023",
+      "birthYear": 1992,
+      "cohort": "Millennials",
+      "city": "Broken Arrow",
+      "acquisitionChannel": "Community event",
+      "giving": {
+        "2023": 150,
+        "2024": 225,
+        "2025": 300
+      }
+    },
+    {
+      "id": "D024",
+      "birthYear": 1993,
+      "cohort": "Millennials",
+      "city": "Other Oklahoma",
+      "acquisitionChannel": "Website",
+      "giving": {
+        "2023": 100,
+        "2024": 150,
+        "2025": 200
+      }
+    }
+  ]
+}
