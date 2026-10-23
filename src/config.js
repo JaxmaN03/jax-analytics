@@ -14,9 +14,8 @@ export const SITE_CONFIG = {
   targetAudience:
     "Small businesses, accounting firms, property management companies, insurance agencies, and organizations needing affordable data solutions.",
   
-  // Static hosting contact email placeholder
-  // Note: Set your actual production email address here when ready
-  contactEmail: "jacksonjmiller03@gmail.com",
+  // Production contact email
+  contactEmail: "jackson@jaxsanalytics.com",
   isEmailPlaceholder: false,
 
   // GitHub profile - populated with repository owner URL

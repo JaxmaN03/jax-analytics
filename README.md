@@ -221,8 +221,8 @@ export const SITE_CONFIG = {
   location: "Tulsa, Oklahoma, USA",
   
   // Set your active production inbox address here:
-  contactEmail: "contact@jaxanalytics.example.com",
-  isEmailPlaceholder: true,
+  contactEmail: "jackson@jaxsanalytics.com",
+  isEmailPlaceholder: false,
 
   // GitHub profile:
   githubUrl: "https://github.com/JaxmaN03",
