@@ -56,11 +56,13 @@ export const SERVICES = [
       "Data visualization",
       "KPI tracking",
       "Custom reports",
+      "PowerPoint template completion",
+      "Custom presentations from a client brief",
     ],
     pricing: "Starting at $250",
     startingPrice: "$250",
     pricingNote: "Customized according to data volume, source systems, and reporting depth.",
-    deliverable: "A dashboard or reporting workbook with agreed KPIs, documented calculations, and an update guide.",
+    deliverable: "A dashboard, reporting workbook, or PowerPoint presentation, with agreed metrics and documented calculations. An update guide is included for dashboards and workbooks.",
 
   },
   {

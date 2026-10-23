@@ -54,6 +54,16 @@ export default function Services({ onSelectService }) {
           </p>
         </div>
 
+        <div className="mb-10 rounded-2xl bg-[#151C2C]/50 border border-slate-800 p-6 sm:p-8">
+          <h3 className="text-xl font-bold text-white mb-3">Presentation Support</h3>
+          <p className="text-base text-slate-300 leading-relaxed max-w-4xl">
+            Turn your analysis into a presentation your audience can follow. I can populate an existing PowerPoint template with your results, charts, and tables, or create a new presentation from scratch using your brief and guidelines.
+          </p>
+          <p className="text-sm text-[#94A3B8] leading-relaxed mt-3">
+            We agree on the audience, key messages, source data, branding, and slide requirements before work begins. Presentation scope and pricing are quoted for your project.
+          </p>
+        </div>
+
         {/* 3 Primary Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {SERVICES.map((service) => (
