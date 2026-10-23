@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   ownerName: "Jackson Miller",
   tagline: "Data. Clarity. Results.",
   subheadline:
-    "Excel solutions, business analytics, and Python automation designed to help businesses work smarter, save time, and make confident decisions.",
+    "Excel solutions, business analytics, and Python automation designed to help your business work smarter and faster so you can make more confident decisions.",
   location: "Tulsa, Oklahoma, USA",
   industry: "Data Analytics, Business Intelligence, Excel Consulting, and Python Automation",
   targetAudience:
