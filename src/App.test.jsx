@@ -95,6 +95,16 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('4. Portfolio Section', () => {
+    it('connects the reporting case study to an analysis inquiry', () => {
+      render(<App />);
+      const study = screen.getByRole('article', { name: 'Excel Data Cleanup & Reporting Tool' });
+      expect(within(study).getByRole('table', { name: /source records before cleanup/i })).toBeInTheDocument();
+      expect(within(study).getByRole('table', { name: /category totals after duplicate removal/i })).toBeInTheDocument();
+      fireEvent.click(within(study).getByRole('button', { name: /have a similar spreadsheet/i }));
+      expect(screen.getByLabelText(/service needed/i)).toHaveValue('analysis');
+      expect(Element.prototype.scrollIntoView).toHaveBeenCalled();
+    });
+
     it('renders two planned projects and a downloadable reporting tool', () => {
       render(<App />);
       expect(screen.getByText('Business Financial Dashboard')).toBeInTheDocument();

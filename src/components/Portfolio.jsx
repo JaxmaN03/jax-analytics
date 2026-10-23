@@ -45,7 +45,7 @@ export default function Portfolio({ onDiscussProject }) {
           </p>
         </div>
 
-        <ReportingDemo />
+        <ReportingDemo onDiscussProject={handleDiscussClick} />
         {/* Upcoming project concepts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {PORTFOLIO_PROJECTS.filter((project) => project.id !== 'automated-reporting').map((project) => (
