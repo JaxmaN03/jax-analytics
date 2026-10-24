@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/',
   build: {
     rolldownOptions: {
-      input: Object.fromEntries(['index', 'services', 'portfolio', 'about', 'contact'].map((page) => [page, fileURLToPath(new URL(`./${page}.html`, import.meta.url))])),
+      input: Object.fromEntries(['index', 'services', 'portfolio', 'about', 'contact', 'nonprofit-case-study', 'reporting-case-study'].map((page) => [page, fileURLToPath(new URL(`./${page}.html`, import.meta.url))])),
     },
   },
   plugins: [

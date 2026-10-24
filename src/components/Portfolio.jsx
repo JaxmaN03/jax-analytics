@@ -11,8 +11,7 @@ import {
   X,
   CheckCircle2,
 } from 'lucide-react';
-import ReportingDemo from './ReportingDemo.jsx';
-import NonprofitDemo from './NonprofitDemo.jsx';
+import { CASE_STUDY_URLS } from '../navigation.js';
 import { PORTFOLIO_PROJECTS } from '../config.js';
 
 export default function Portfolio({ onDiscussProject }) {
@@ -42,8 +41,18 @@ export default function Portfolio({ onDiscussProject }) {
           </p>
         </div>
 
-        <NonprofitDemo onDiscussProject={handleDiscussClick} />
-        <ReportingDemo onDiscussProject={handleDiscussClick} />
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {[
+            { id: 'nonprofit', title: 'Understanding Your Nonprofit Supporters', label: 'Nonprofit data analysis', description: 'Explore who supports a fictional nonprofit, where supporters come from, and how their giving changes. Includes interactive results and a sample presentation.', detail: '24 fictional donors · Three years of giving' },
+            { id: 'reporting', title: 'Excel Data Cleanup & Reporting Tool', label: 'Spreadsheet reporting & Python automation', description: 'See a messy sales export become organized records and usable reports, with a clear before-and-after example and a downloadable tool.', detail: 'Fictional sales data · Working demonstration' },
+          ].map((project) => <article key={project.id} className="rounded-2xl bg-[#151C2C] border border-slate-700 p-6 sm:p-8 flex flex-col">
+            <p className="text-xs font-mono text-[#00D9FF] mb-3">{project.label}</p>
+            <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+            <p className="text-sm text-slate-300 leading-relaxed mb-4 flex-1">{project.description}</p>
+            <p className="text-xs text-[#94A3B8] mb-6">{project.detail}</p>
+            <a href={CASE_STUDY_URLS[project.id]} aria-label={`View case study: ${project.title}`} className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#00D9FF]/10 border border-[#00D9FF]/30 px-4 py-3 text-sm font-semibold text-[#00D9FF] hover:bg-[#00D9FF]/20">View Case Study <ArrowUpRight aria-hidden="true" className="w-4 h-4 ml-2" /></a>
+          </article>)}
+        </div>
         {/* Upcoming project concepts */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {PORTFOLIO_PROJECTS.filter((project) => project.id !== 'automated-reporting').map((project) => (

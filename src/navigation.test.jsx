@@ -13,6 +13,21 @@ beforeEach(() => {
 });
 
 describe('Separate website pages', () => {
+  it('keeps the portfolio index short and links to both complete examples', () => {
+    window.history.replaceState({}, '', '/portfolio.html');
+    render(<App />);
+    expect(screen.getByRole('link', { name: /view case study: understanding your nonprofit/i })).toHaveAttribute('href', '/nonprofit-case-study.html');
+    expect(screen.getByRole('link', { name: /view case study: excel data cleanup/i })).toHaveAttribute('href', '/reporting-case-study.html');
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Donor locations' })).not.toBeInTheDocument();
+  });
+
+  it('redirects old portfolio section URLs to their full case studies', () => {
+    window.history.replaceState({}, '', '/portfolio.html#reporting-case-study');
+    render(<App />);
+    expect(navigate).toHaveBeenCalledWith('/reporting-case-study.html');
+  });
+
   it('keeps home focused on the introduction and mission', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: /turn complex data/i })).toBeInTheDocument();
@@ -51,8 +66,10 @@ describe('Separate website pages', () => {
   });
 
   it('keeps portfolio pricing and sample links usable across pages', () => {
-    window.history.replaceState({}, '', '/portfolio.html');
+    window.history.replaceState({}, '', '/nonprofit-case-study.html');
     render(<App />);
+    expect(screen.getByRole('link', { name: 'Back to Portfolio', exact: false })).toHaveAttribute('href', '/portfolio.html');
+    expect(within(screen.getByLabelText('Main Navigation')).getByRole('link', { name: 'Portfolio' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('link', { name: /see presentation add-on pricing/i })).toHaveAttribute('href', '/services.html#presentation-addon');
     fireEvent.click(screen.getByRole('button', { name: /discuss your nonprofit data/i }));
     expect(navigate).toHaveBeenCalledWith('/contact.html?service=analysis');
@@ -60,7 +77,7 @@ describe('Separate website pages', () => {
   });
 
   it('preserves the published section links as redirects to the new pages', () => {
-    expect(legacyDestination('#nonprofit-case-study')).toBe('/portfolio.html#nonprofit-case-study');
+    expect(legacyDestination('#nonprofit-case-study')).toBe('/nonprofit-case-study.html');
     expect(legacyDestination('#how-it-works')).toBe('/services.html#how-it-works');
     window.history.replaceState({}, '', '/#presentation-addon');
     render(<App />);

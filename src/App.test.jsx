@@ -102,6 +102,7 @@ describe('Jax\'s Analytics Website', () => {
   describe('4. Portfolio Section', () => {
     beforeEach(() => window.history.replaceState({}, '', '/portfolio.html'));
     it('connects the reporting case study to an analysis inquiry', () => {
+      window.history.replaceState({}, '', '/reporting-case-study.html');
       render(<App />);
       const study = screen.getByRole('article', { name: 'Excel Data Cleanup & Reporting Tool' });
       expect(within(study).getByRole('table', { name: /source records before cleanup/i })).toBeInTheDocument();
@@ -115,7 +116,7 @@ describe('Jax\'s Analytics Website', () => {
       expect(screen.getByText('Business Financial Dashboard')).toBeInTheDocument();
       expect(screen.getByText('Property Management Analytics')).toBeInTheDocument();
       expect(screen.getByText('Excel Data Cleanup & Reporting Tool')).toBeInTheDocument();
-      expect(screen.getByRole('link', { name: /download tool & sample data/i })).toHaveAttribute('href', expect.stringContaining('downloads/jax-analytics-report-tool.zip'));
+      expect(screen.getByRole('link', { name: /view case study: excel data cleanup/i })).toHaveAttribute('href', '/reporting-case-study.html');
 
       const comingSoonBadges = screen.getAllByText('Coming Soon');
       expect(comingSoonBadges.length).toBe(2);
@@ -177,6 +178,25 @@ describe('Jax\'s Analytics Website', () => {
 
   describe('6. Contact Section', () => {
     beforeEach(() => window.history.replaceState({}, '', '/contact.html'));
+    it('records requested exclusivity and extended retention without granting them automatically', () => {
+      render(<App />);
+      fireEvent.click(screen.getByText('Optional project arrangements'));
+      const exclusive = screen.getByLabelText(/request exclusive rights to newly written project code/i);
+      const retention = screen.getByLabelText(/request longer file retention for future work/i);
+      expect(exclusive).not.toBeChecked();
+      expect(retention).not.toBeChecked();
+      fireEvent.click(exclusive);
+      fireEvent.click(retention);
+      fireEvent.change(screen.getByPlaceholderText('Jane Doe'), { target: { value: 'Sample Client' } });
+      fireEvent.change(screen.getByPlaceholderText('jane@company.com'), { target: { value: 'sample@example.com' } });
+      fireEvent.change(screen.getByLabelText(/project description/i), { target: { value: 'Discuss repeat work and exclusive project code.' } });
+      fireEvent.click(screen.getByRole('button', { name: /prepare inquiry email/i }));
+      const email = screen.getByRole('link', { name: /open in email app/i }).getAttribute('href');
+      const body = new URLSearchParams(email.split('?')[1]).get('body');
+      expect(body).toContain('Exclusive Project Code: Requested; separate quote and signed agreement required');
+      expect(body).toContain('Extended File Retention: Requested for future work; retention period to be agreed in writing');
+      expect(screen.getByText(/working copies of client data are deleted 30 days/i)).toBeInTheDocument();
+    });
     it('adds a presentation without replacing the selected service and includes it in the email', () => {
       window.history.replaceState({}, '', '/contact.html?service=python&presentation=template');
       render(<App />);

@@ -23,6 +23,8 @@ export default function Contact({ preselectedService, presentationRequest }) {
     timeline: '1-2 weeks',
     description: '',
     presentation: '',
+    exclusiveCode: false,
+    extendedRetention: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -37,8 +39,8 @@ export default function Contact({ preselectedService, presentationRequest }) {
   }, [preselectedService]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   useEffect(() => {
@@ -68,6 +70,8 @@ Contact Email: ${formData.email || 'Not specified'}
 Service Needed: ${serviceNames[formData.service] || formData.service}
 Desired Timeline: ${formData.timeline}
 Presentation Add-on: ${presentation ? `${presentation.name} (+$${presentation.price} USD, up to 10 slides, one revision round; additional slides $${presentation.extraSlidePrice} each)` : 'None requested'}
+Exclusive Project Code: ${formData.exclusiveCode ? 'Requested; separate quote and signed agreement required' : 'Not requested'}
+Extended File Retention: ${formData.extendedRetention ? 'Requested for future work; retention period to be agreed in writing' : 'Default: delete working copies of client data 30 days after project completion'}
 
 --- PROJECT DESCRIPTION ---
 ${formData.description || 'No description provided.'}
@@ -350,6 +354,15 @@ Looking forward to your reply.
                     </select>
                     <p id="presentation-scope" className="text-xs text-[#94A3B8] mt-2 leading-relaxed">Available with any service. Up to 10 slides, editable PowerPoint and PDF, and one revision round. Added to the main project price. {presentation ? `Additional slides: $${presentation.extraSlidePrice} each. ` : ''}Final scope and total confirmed before work begins.</p>
                   </div>
+
+                  <details className="rounded-xl border border-slate-700 p-4">
+                    <summary className="cursor-pointer text-sm font-semibold text-slate-200">Optional project arrangements</summary>
+                    <div className="space-y-4 mt-4 text-sm text-slate-300">
+                      <label className="flex items-start gap-3"><input type="checkbox" name="exclusiveCode" checked={formData.exclusiveCode} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request exclusive rights to newly written project code <span className="block text-xs text-[#94A3B8] mt-1">Separate quote and signed agreement. We define the code covered before work begins.</span></span></label>
+                      <label className="flex items-start gap-3"><input type="checkbox" name="extendedRetention" checked={formData.extendedRetention} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request longer file retention for future work <span className="block text-xs text-[#94A3B8] mt-1">Default deletion is 30 days after completion. A longer period must be agreed in writing.</span></span></label>
+                      <a href="#data-handling" className="inline-flex min-h-11 items-center text-xs text-[#00D9FF] hover:underline">Read about file handling and code exclusivity</a>
+                    </div>
+                  </details>
 
                   {/* Desired Timeline */}
                   <div>

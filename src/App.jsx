@@ -10,6 +10,9 @@ import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import Footer from './components/Footer.jsx';
+import CaseStudy from './components/CaseStudy.jsx';
+import FAQ from './components/FAQ.jsx';
+import DataHandling from './components/DataHandling.jsx';
 
 export default function App() {
   const page = currentPage();
@@ -20,7 +23,8 @@ export default function App() {
   const presentationRequest = ['template', 'custom'].includes(presentation) ? { id: presentation } : null;
 
   useEffect(() => {
-    const redirect = page === 'home' && legacyDestination(window.location.hash);
+    const oldCaseStudyLink = page === 'portfolio' && ['#nonprofit-case-study', '#reporting-case-study'].includes(window.location.hash);
+    const redirect = (page === 'home' || oldCaseStudyLink) && legacyDestination(window.location.hash);
     if (redirect) {
       navigate(redirect);
       return;
@@ -36,15 +40,16 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#0B0F19] text-[#F1F5F9] selection:bg-[#00D9FF]/30 selection:text-[#00D9FF] flex flex-col font-sans">
       {/* Sticky Navigation */}
-      <Navbar onSelectService={handleSelectService} currentPage={page} />
+      <Navbar onSelectService={handleSelectService} currentPage={['nonprofit', 'reporting'].includes(page) ? 'portfolio' : page} />
 
       {/* Main Content Sections */}
       <main className="flex-1">
         {page === 'home' && <><Hero onStartProject={handleSelectService} /><Mission /></>}
-        {page === 'services' && <><Services onSelectService={handleSelectService} onSelectPresentation={(id) => navigate(contactUrl(selectedService, id))} /><Process /></>}
+        {page === 'services' && <><Services onSelectService={handleSelectService} onSelectPresentation={(id) => navigate(contactUrl(selectedService, id))} /><Process /><FAQ /></>}
         {page === 'portfolio' && <Portfolio onDiscussProject={handleSelectService} />}
+        {['nonprofit', 'reporting'].includes(page) && <CaseStudy kind={page} onDiscussProject={handleSelectService} />}
         {page === 'about' && <><About onConnectClick={handleSelectService} /><Testimonials /></>}
-        {page === 'contact' && <Contact preselectedService={selectedService} presentationRequest={presentationRequest} />}
+        {page === 'contact' && <><Contact preselectedService={selectedService} presentationRequest={presentationRequest} /><DataHandling /></>}
       </main>
 
       {/* Footer */}

@@ -10,9 +10,16 @@ export const NAV_LINKS = Object.entries(PAGE_URLS).map(([id, href]) => ({
   id, name: id[0].toUpperCase() + id.slice(1), href,
 }));
 
+export const CASE_STUDY_URLS = {
+  nonprofit: `${import.meta.env.BASE_URL}nonprofit-case-study.html`,
+  reporting: `${import.meta.env.BASE_URL}reporting-case-study.html`,
+};
+
 export function currentPage() {
   const filename = window.location.pathname.split('/').pop();
   const page = filename?.replace(/\.html$/, '');
+  if (page === 'nonprofit-case-study') return 'nonprofit';
+  if (page === 'reporting-case-study') return 'reporting';
   return Object.hasOwn(PAGE_URLS, page) ? page : 'home';
 }
 
@@ -27,6 +34,8 @@ export function navigate(url) {
 }
 
 export function legacyDestination(hash) {
+  if (hash === '#nonprofit-case-study') return CASE_STUDY_URLS.nonprofit;
+  if (hash === '#reporting-case-study') return CASE_STUDY_URLS.reporting;
   const sections = {
     '#services': 'services', '#presentation-addon': 'services', '#how-it-works': 'services',
     '#portfolio': 'portfolio', '#reporting-case-study': 'portfolio', '#nonprofit-case-study': 'portfolio',

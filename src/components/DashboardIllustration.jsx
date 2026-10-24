@@ -1,4 +1,4 @@
-import { PAGE_URLS } from '../navigation.js';
+import { CASE_STUDY_URLS } from '../navigation.js';
 import React, { useState } from 'react';
 import { REPORTING_DEMO } from '../reportingDemo.js';
 
@@ -68,7 +68,7 @@ export default function DashboardIllustration() {
         </div>
       )}
       <p className="text-xs text-[#94A3B8] leading-relaxed mb-3">Verified output from the downloadable fictional sample. These figures describe the demonstration, not client outcomes.</p>
-      <a href={`${PAGE_URLS.portfolio}#reporting-case-study`} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#00D9FF] hover:text-white">Explore the tool and sample data →</a>
+      <a href={CASE_STUDY_URLS.reporting} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#00D9FF] hover:text-white">Explore the tool and sample data →</a>
     </div>
   );
 }
