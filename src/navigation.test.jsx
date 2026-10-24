@@ -68,7 +68,7 @@ describe('Separate website pages', () => {
   it('keeps portfolio pricing and sample links usable across pages', () => {
     window.history.replaceState({}, '', '/nonprofit-case-study.html');
     render(<App />);
-    expect(screen.getByRole('link', { name: 'Back to Portfolio', exact: false })).toHaveAttribute('href', '/portfolio.html');
+    expect(screen.getByRole('link', { name: /Back to Portfolio/ })).toHaveAttribute('href', '/portfolio.html');
     expect(within(screen.getByLabelText('Main Navigation')).getByRole('link', { name: 'Portfolio' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('link', { name: /see presentation add-on pricing/i })).toHaveAttribute('href', '/services.html#presentation-addon');
     fireEvent.click(screen.getByRole('button', { name: /discuss your nonprofit data/i }));
