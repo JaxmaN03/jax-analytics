@@ -116,7 +116,7 @@ export default function Navbar({ onSelectService, currentPage }) {
               href={link.href}
                 aria-current={currentPage === link.id ? 'page' : undefined}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="block px-3 py-2.5 rounded-lg text-base font-medium text-[#94A3B8] hover:text-white hover:bg-[#151C2C] transition-colors"
+              className={`block px-3 py-2.5 rounded-lg text-base transition-colors border-l-2 ${currentPage === link.id ? 'font-semibold text-[#00D9FF] bg-[#00D9FF]/10 border-[#00D9FF]' : 'font-medium text-[#94A3B8] border-transparent hover:text-white hover:bg-[#151C2C]'}`}
             >
               {link.name}
             </a>
