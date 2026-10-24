@@ -70,7 +70,7 @@ export default function Navbar({ onSelectService, currentPage }) {
                 href={link.href}
                 aria-current={currentPage === link.id ? 'page' : undefined}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-sm font-medium text-[#94A3B8] hover:text-[#00D9FF] transition-colors duration-200"
+                className={`text-sm font-medium transition-colors duration-200 ${currentPage === link.id ? 'text-[#00D9FF]' : 'text-[#94A3B8] hover:text-[#00D9FF]'}`}
               >
                 {link.name}
               </a>
