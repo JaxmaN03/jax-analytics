@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#151C2C" />
-      <stop offset="100%" stop-color="#0B0F19" />
+      <stop offset="0%" stop-color="#1B263B" />
+      <stop offset="100%" stop-color="#0D1B2A" />
     </linearGradient>
     <linearGradient id="cyanViolet" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00D9FF" />
-      <stop offset="100%" stop-color="#8B5CF6" />
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#91A4BC" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="2" result="blur" />
@@ -15,24 +15,24 @@
   </defs>
 
   <!-- Background rounded rectangle -->
-  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" stroke="#00D9FF" stroke-opacity="0.4" stroke-width="2" />
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" stroke="#D4AF37" stroke-opacity="0.4" stroke-width="2" />
 
   <!-- Data grid background accent -->
-  <path d="M12 48h40M12 40h40M12 32h40" stroke="#94A3B8" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="2 2" />
+  <path d="M12 48h40M12 40h40M12 32h40" stroke="#BDB8AE" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="2 2" />
 
   <!-- Small analytics bar accents -->
-  <rect x="14" y="38" width="3" height="10" rx="1" fill="#8B5CF6" fill-opacity="0.6" />
-  <rect x="19" y="32" width="3" height="16" rx="1" fill="#00D9FF" fill-opacity="0.6" />
-  <rect x="24" y="26" width="3" height="22" rx="1" fill="#00D9FF" />
+  <rect x="14" y="38" width="3" height="10" rx="1" fill="#91A4BC" fill-opacity="0.6" />
+  <rect x="19" y="32" width="3" height="16" rx="1" fill="#D4AF37" fill-opacity="0.6" />
+  <rect x="24" y="26" width="3" height="22" rx="1" fill="#D4AF37" />
 
   <!-- Letters JA -->
   <g filter="url(#glow)">
     <!-- J -->
     <path d="M30 18v18c0 4.5-2.8 7-6.5 7-2 0-3.8-.7-4.8-1.7l1.8-2.6c.7.7 1.8 1.2 3 1.2 2 0 3.5-1.2 3.5-3.8V18h3z" fill="url(#cyanViolet)" />
     <!-- A -->
-    <path d="M43 18h3.2L53 43h-3.4l-2.2-7.5H41.6L39.4 43H36L43 18zm3.6 14.5L44.8 24l-1.8 8.5h3.6z" fill="#00D9FF" />
+    <path d="M43 18h3.2L53 43h-3.4l-2.2-7.5H41.6L39.4 43H36L43 18zm3.6 14.5L44.8 24l-1.8 8.5h3.6z" fill="#D4AF37" />
   </g>
 
   <!-- Accent dot -->
-  <circle cx="53" cy="20" r="2" fill="#00D9FF" />
+  <circle cx="53" cy="20" r="2" fill="#D4AF37" />
 </svg>

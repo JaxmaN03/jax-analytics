@@ -13,12 +13,12 @@ const questions = [
 
 export default function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-20 bg-[#0B0F19] border-t border-slate-900 scroll-mt-24">
+    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-20 bg-[#0D1B2A] border-t border-slate-900 scroll-mt-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">A few things you might be wondering</h2>
-        <p className="text-[#94A3B8] leading-relaxed mb-8">Here is what to expect when we work together.</p>
+        <p className="text-[#BDB8AE] leading-relaxed mb-8">Here is what to expect when we work together.</p>
         <div className="divide-y divide-slate-800">
-          {questions.map(([question, answer]) => <details key={question} className="py-5 group"><summary className="cursor-pointer text-base font-semibold text-slate-200 hover:text-[#00D9FF] py-1">{question}</summary><p className="text-sm text-[#94A3B8] leading-relaxed mt-4">{answer}</p></details>)}
+          {questions.map(([question, answer]) => <details key={question} className="py-5 group"><summary className="cursor-pointer text-base font-semibold text-slate-200 hover:text-[#D4AF37] py-1">{question}</summary><p className="text-sm text-[#BDB8AE] leading-relaxed mt-4">{answer}</p></details>)}
         </div>
       </div>
     </section>

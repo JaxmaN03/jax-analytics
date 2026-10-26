@@ -26,7 +26,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="bg-[#0B0F19] border-t border-slate-800 text-[#94A3B8] text-sm relative">
+    <footer className="bg-[#0D1B2A] border-t border-slate-800 text-[#BDB8AE] text-sm relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Brand & Tagline */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#151C2C] border border-[#00D9FF]/40 text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#8B5CF6] font-mono font-bold text-sm">
+              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#1B263B] border border-[#D4AF37]/40 text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#91A4BC] font-mono font-bold text-sm">
                 JA
               </div>
               <span className="font-extrabold text-xl tracking-tight text-white">
@@ -42,7 +42,7 @@ export default function Footer() {
               </span>
             </div>
             
-            <p className="text-sm font-mono text-[#00D9FF]">
+            <p className="text-sm font-mono text-[#D4AF37]">
               {SITE_CONFIG.tagline}
             </p>
 
@@ -51,7 +51,7 @@ export default function Footer() {
             </p>
 
             <div className="inline-flex items-center gap-1.5 text-xs text-slate-400 font-mono">
-              <MapPin className="w-3.5 h-3.5 text-[#00D9FF]" />
+              <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>{SITE_CONFIG.location}</span>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-xs text-[#94A3B8] hover:text-[#00D9FF] transition-colors"
+                    className="text-xs text-[#BDB8AE] hover:text-[#D4AF37] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -92,9 +92,9 @@ export default function Footer() {
                   href={SITE_CONFIG.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#151C2C] border border-slate-700 hover:border-[#00D9FF]/50 text-xs text-slate-300 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1B263B] border border-slate-700 hover:border-[#D4AF37]/50 text-xs text-slate-300 hover:text-white transition-colors"
                 >
-                  <GithubIcon className="w-4 h-4 text-[#00D9FF]" />
+                  <GithubIcon className="w-4 h-4 text-[#D4AF37]" />
                   <span>GitHub Profile</span>
                 </a>
               </div>
@@ -112,7 +112,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-[#00D9FF] transition-colors p-1"
+            className="flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors p-1"
             aria-label="Back to top of page"
           >
             <span>Back to top</span>

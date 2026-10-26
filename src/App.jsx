@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-[#F1F5F9] selection:bg-[#00D9FF]/30 selection:text-[#00D9FF] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#0D1B2A] text-[#F3EFE9] selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] flex flex-col font-sans">
       {/* Sticky Navigation */}
       <Navbar onSelectService={handleSelectService} currentPage={['nonprofit', 'reporting'].includes(page) ? 'portfolio' : page} />
 
