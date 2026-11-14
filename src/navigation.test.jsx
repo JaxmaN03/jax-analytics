@@ -33,7 +33,7 @@ describe('Separate website pages', () => {
     expect(screen.getByRole('heading', { level: 1, name: /making data/i })).toBeInTheDocument();
     const missionHeading = document.getElementById('mission-heading');
     expect(missionHeading).toBeInTheDocument();
-    expect(missionHeading).toHaveTextContent(/making data/i);
+    expect(missionHeading).toHaveTextContent(/your data has a story/i);
     expect(screen.queryByRole('heading', { name: 'Core Data & Analytics Services' })).not.toBeInTheDocument();
     expect(screen.queryByLabelText(/service needed/i)).not.toBeInTheDocument();
     const nav = screen.getByLabelText('Main Navigation');
