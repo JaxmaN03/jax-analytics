@@ -46,9 +46,9 @@ describe('Jax\'s Analytics Website', () => {
   describe('2. Hero Section', () => {
     it('displays the redesigned Space Age headline and service introduction', () => {
       render(<App />);
-      expect(screen.getByRole('heading', { level: 1, name: /the future/i })).toBeInTheDocument();
-      expect(screen.getByText(/Excel solutions, insightful reporting, and practical automation/i)).toBeInTheDocument();
-      expect(screen.getByRole('heading', { name: /data should make life/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 1, name: /making data/i })).toBeInTheDocument();
+      expect(screen.getByText(/For everyone\. We transform complex information/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /making data/i })).toBeInTheDocument();
     });
 
     it('displays tagline and action buttons', () => {
