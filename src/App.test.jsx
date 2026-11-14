@@ -48,7 +48,7 @@ describe('Jax\'s Analytics Website', () => {
       render(<App />);
       expect(screen.getByRole('heading', { level: 1, name: /making data/i })).toBeInTheDocument();
       expect(screen.getByText(/For everyone\. We transform complex information/i)).toBeInTheDocument();
-      expect(screen.getByRole('heading', { level: 1, name: /making data/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 2, name: /your data has a story/i })).toBeInTheDocument();
     });
 
     it('displays tagline and action buttons', () => {
