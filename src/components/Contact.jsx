@@ -107,7 +107,7 @@ Looking forward to your reply.
   };
 
   return (
-    <section id="contact" className="nasapunk-grid py-20 md:py-28 bg-[#101C32] relative border-t border-[#E3C581]/25">
+    <section id="contact" className="nasapunk-grid py-20 md:py-28 bg-[#F3EBD9] relative border-t border-[#243E60]/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -116,10 +116,10 @@ Looking forward to your reply.
             <Sparkles className="w-3.5 h-3.5" />
             <span>COMMUNICATIONS / INQUIRY TERMINAL 001</span>
           </div>
-          <h2 className="space-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#F3EBD9] tracking-tight mb-4">
+          <h2 className="space-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#101C32] tracking-tight mb-4">
             Let&apos;s Make Your Data Work for You.
           </h2>
-          <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed mb-3">
+          <p className="text-base sm:text-lg text-[#243E60] leading-relaxed mb-3">
             Have a spreadsheet problem, reporting challenge, or automation idea? Tell me about your project and let&apos;s explore a solution.
           </p>
           <div className="inline-block px-4 py-2 border-l-2 border-[#E3C581] bg-[#243E60] text-xs font-mono tracking-wide text-[#E3C581]">
