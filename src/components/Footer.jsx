@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUp, ArrowUpRight, MapPin } from 'lucide-react';
-import { NAV_LINKS } from '../navigation.js';
+import { NAV_LINKS, PAGE_URLS } from '../navigation.js';
 import { SITE_CONFIG } from '../config.js';
 
 function GithubIcon({ className = 'w-4 h-4' }) {
@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="md:col-span-4">
             <h2 className="font-mono text-xs tracking-[.18em] text-[#E66C37] mb-6">02 / OPEN A CHANNEL</h2>
             <p className="text-sm leading-7 mb-6">Work directly with {SITE_CONFIG.ownerName}. No unnecessary layers—just a conversation about what your data can do.</p>
-            <a href="/contact" className="inline-flex items-center justify-between gap-5 w-full sm:w-auto px-5 py-4 bg-[#E66C37] text-[#101C32] font-bold text-xs tracking-[.1em] hover:bg-[#F3EBD9] transition-colors">
+            <a href={PAGE_URLS.contact} className="inline-flex items-center justify-between gap-5 w-full sm:w-auto px-5 py-4 bg-[#E66C37] text-[#101C32] font-bold text-xs tracking-[.1em] hover:bg-[#F3EBD9] transition-colors">
               START A PROJECT <ArrowUpRight size={18} aria-hidden="true" />
             </a>
             {SITE_CONFIG.githubUrl && (
