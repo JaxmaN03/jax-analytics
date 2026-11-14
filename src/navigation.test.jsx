@@ -30,8 +30,8 @@ describe('Separate website pages', () => {
 
   it('keeps home focused on the introduction and mission', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: /turn complex data/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'Our Mission' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /the future/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /data should make life/i })).toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'Core Data & Analytics Services' })).not.toBeInTheDocument();
     expect(screen.queryByLabelText(/service needed/i)).not.toBeInTheDocument();
     const nav = screen.getByLabelText('Main Navigation');
@@ -73,7 +73,7 @@ describe('Separate website pages', () => {
     expect(screen.getByRole('link', { name: /see presentation add-on pricing/i })).toHaveAttribute('href', '/services.html#presentation-addon');
     fireEvent.click(screen.getByRole('button', { name: /discuss your nonprofit data/i }));
     expect(navigate).toHaveBeenCalledWith('/contact.html?service=analysis');
-    expect(screen.queryByRole('heading', { name: 'Our Mission' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: /data should make life/i })).not.toBeInTheDocument();
   });
 
   it('preserves the published section links as redirects to the new pages', () => {
