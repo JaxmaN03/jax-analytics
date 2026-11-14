@@ -31,7 +31,9 @@ describe('Separate website pages', () => {
   it('keeps home focused on the introduction and mission', () => {
     render(<App />);
     expect(screen.getByRole('heading', { name: /the future/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /data should make life/i })).toBeInTheDocument();
+    const missionHeading = document.getElementById('mission-heading');
+    expect(missionHeading).toBeInTheDocument();
+    expect(missionHeading).toHaveTextContent(/data should make life/i);
     expect(screen.queryByRole('heading', { name: 'Core Data & Analytics Services' })).not.toBeInTheDocument();
     expect(screen.queryByLabelText(/service needed/i)).not.toBeInTheDocument();
     const nav = screen.getByLabelText('Main Navigation');
