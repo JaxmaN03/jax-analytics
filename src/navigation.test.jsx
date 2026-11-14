@@ -30,7 +30,7 @@ describe('Separate website pages', () => {
 
   it('keeps home focused on the introduction and mission', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: /making data/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /making data/i })).toBeInTheDocument();
     const missionHeading = document.getElementById('mission-heading');
     expect(missionHeading).toBeInTheDocument();
     expect(missionHeading).toHaveTextContent(/making data/i);
