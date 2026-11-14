@@ -4,11 +4,11 @@ import { ABOUT_INFO } from '../config.js';
 
 export default function About({ onConnectClick }) {
   return (
-    <section id="about" className="nasapunk-grid relative bg-[#101C32] text-[#F3EBD9] py-20 md:py-28 overflow-hidden">
+    <section id="about" className="nasapunk-grid relative bg-[#F3EBD9] text-[#101C32] py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 relative z-10">
-        <div className="flex flex-wrap justify-between gap-3 pb-5 mb-14 border-b border-[#E3C581]/35">
-          <span className="archive-label">PERSONNEL ARCHIVE / 001</span>
-          <span className="archive-label">INDEPENDENT DATA PRACTICE · TULSA, OK</span>
+        <div className="flex flex-wrap justify-between gap-3 pb-5 mb-14 border-b border-[#243E60]/35">
+          <span className="archive-label !text-[#243E60]">PERSONNEL ARCHIVE / 001</span>
+          <span className="archive-label !text-[#243E60]">INDEPENDENT DATA PRACTICE · TULSA, OK</span>
         </div>
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-5">
@@ -32,15 +32,15 @@ export default function About({ onConnectClick }) {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <p className="archive-label mb-5">THE PERSON BEHIND THE NUMBERS</p>
-            <h2 className="space-heading text-[clamp(2.8rem,5.5vw,5.6rem)] leading-[1.03] tracking-[-.04em] mb-8">{ABOUT_INFO.heading}</h2>
-            <p className="text-lg text-[#E3C581] mb-7">Practical data solutions. Clear communication. Personal accountability.</p>
-            <div className="space-y-5 text-[#B9C8D8] leading-relaxed mb-10">{ABOUT_INFO.paragraphs.map((paragraph,index)=><p key={index}>{paragraph}</p>)}</div>
-            <div className="border-t border-[#E3C581]/35 pt-7">
-              <h3 className="archive-label mb-5">TECHNICAL CAPABILITIES / INDEX</h3>
+            <p className="archive-label !text-[#243E60] mb-5">THE PERSON BEHIND THE NUMBERS</p>
+            <h2 className="space-heading text-[clamp(2.8rem,5.5vw,5.6rem)] leading-[1.03] tracking-[-.04em] mb-8 text-[#101C32]">{ABOUT_INFO.heading}</h2>
+            <p className="text-lg text-[#285B80] mb-7">Practical data solutions. Clear communication. Personal accountability.</p>
+            <div className="space-y-5 text-[#243E60] leading-relaxed mb-10">{ABOUT_INFO.paragraphs.map((paragraph,index)=><p key={index}>{paragraph}</p>)}</div>
+            <div className="border-t border-[#243E60]/35 pt-7">
+              <h3 className="archive-label !text-[#243E60] mb-5">TECHNICAL CAPABILITIES / INDEX</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{ABOUT_INFO.skills.map((skill,index)=><div key={skill} className="border border-[#E3C581]/25 bg-[#243E60]/50 px-3 py-4 min-h-16 flex flex-col justify-between gap-2"><span className="text-[10px] font-mono text-[#E3C581]">{String(index+1).padStart(2,'0')}</span><span className="text-sm text-[#F3EBD9]">{skill}</span></div>)}</div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">{ABOUT_INFO.valueProps.map(vp=><div key={vp.title} className="border-l-2 border-[#E66C37] pl-4 py-2"><h4 className="flex gap-2 items-center text-[#F3EBD9] font-semibold mb-2"><CheckCircle2 size={16} className="text-[#E3C581]"/>{vp.title}</h4><p className="text-sm leading-relaxed text-[#B9C8D8]">{vp.description}</p></div>)}</div>
+            <div className="grid sm:grid-cols-2 gap-4 mt-8">{ABOUT_INFO.valueProps.map(vp=><div key={vp.title} className="border-l-2 border-[#E66C37] pl-4 py-2"><h4 className="flex gap-2 items-center text-[#101C32] font-semibold mb-2"><CheckCircle2 size={16} className="text-[#E3C581]"/>{vp.title}</h4><p className="text-sm leading-relaxed text-[#243E60]">{vp.description}</p></div>)}</div>
           </div>
         </div>
       </div>
