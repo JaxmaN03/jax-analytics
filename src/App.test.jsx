@@ -44,11 +44,11 @@ describe('Jax\'s Analytics Website', () => {
   });
 
   describe('2. Hero Section', () => {
-    it('displays required headline and subheadline', () => {
+    it('displays the redesigned Space Age headline and service introduction', () => {
       render(<App />);
-      expect(screen.getByText(/Turn Complex Data Into/i)).toBeInTheDocument();
-      expect(screen.getByText(/Clear Decisions\./i)).toBeInTheDocument();
-      expect(screen.getByText(SITE_CONFIG.subheadline)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { level: 1, name: /the future\s+is clear\./i })).toBeInTheDocument();
+      expect(screen.getByText(/Excel solutions, insightful reporting, and practical automation/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /data should make life/i })).toBeInTheDocument();
     });
 
     it('displays tagline and action buttons', () => {
@@ -57,17 +57,12 @@ describe('Jax\'s Analytics Website', () => {
       expect(screen.getByRole('button', { name: /explore services/i })).toBeInTheDocument();
     });
 
-    it('shows verified sample results and the real reporting workflow', () => {
+    it('keeps the project inquiry and service navigation working', () => {
       render(<App />);
-      expect(screen.getByText('Reporting Tool Demo')).toBeInTheDocument();
-      expect(screen.getByText('$13,625')).toBeInTheDocument();
-      expect(screen.queryByText('48 hrs')).not.toBeInTheDocument();
-      expect(screen.queryByText('99.8%')).not.toBeInTheDocument();
-      fireEvent.click(screen.getByRole('button', { name: 'How It Works' }));
-      expect(screen.getByText('From source file to usable reports')).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: 'How It Works' })).toHaveAttribute('aria-pressed', 'true');
-      fireEvent.click(screen.getByRole('button', { name: 'Sample Results' }));
-      expect(screen.getByText('Sample sales by category')).toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: /start a project/i }));
+      expect(navigate).toHaveBeenCalledWith('/contact.html?service=excel');
+      fireEvent.click(screen.getByRole('button', { name: /explore services/i }));
+      expect(navigate).toHaveBeenCalledWith('/services.html');
     });
   });
 
