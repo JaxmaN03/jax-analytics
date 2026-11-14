@@ -135,3 +135,19 @@ select:focus-visible {
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 }
+
+/* NASA-punk inspired industrial grid: original artwork and styling */
+.nasapunk-grid {
+  background-image:
+    linear-gradient(rgba(227,197,129,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(227,197,129,.035) 1px, transparent 1px),
+    radial-gradient(ellipse at 90% 0%, rgba(36,62,96,.45), transparent 60%);
+  background-size: 44px 44px, 44px 44px, auto;
+}
+.nasapunk-grid input:focus-visible,
+.nasapunk-grid select:focus-visible,
+.nasapunk-grid textarea:focus-visible,
+.nasapunk-grid button:focus-visible {
+  outline: 2px solid #E3C581;
+  outline-offset: 3px;
+}
