@@ -256,8 +256,8 @@ describe('Jax\'s Analytics Website', () => {
   describe('7. Footer', () => {
     it('renders business name, tagline, Tulsa location, and copyright 2026', () => {
       render(<App />);
-      expect(screen.getByText(/Copyright © 2026 Jax's Analytics/i)).toBeInTheDocument();
-      expect(screen.getByText(/Independent Data Analytics Services/i)).toBeInTheDocument();
+      expect(screen.getByText(/© 2026 Jax's Analytics/i)).toBeInTheDocument();
+      expect(screen.getByText(/Independent data analytics, Excel consulting/i)).toBeInTheDocument();
       const locationMatches = screen.getAllByText(/Tulsa, Oklahoma/i);
       expect(locationMatches.length).toBeGreaterThan(0);
     });
