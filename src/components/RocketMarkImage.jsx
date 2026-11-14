@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LegacyRocketMark from './RocketMark.jsx';
 
 /**
  * Use the approved artwork, not a hand-drawn SVG approximation.
@@ -8,7 +7,7 @@ import LegacyRocketMark from './RocketMark.jsx';
  */
 export default function RocketMarkImage({ placement = 'header', className = '' }) {
   const [failed, setFailed] = useState(false);
-  if (failed) return <LegacyRocketMark className={className} />;
+  if (failed) return <span role="img" aria-label="Jax's Analytics logo" className={`inline-flex items-center justify-center text-[#E3C581] font-bold font-mono ${className}`}>JA</span>;
   const filename = placement === 'footer' ? 'rocket-footer.png' : 'rocket-header.png';
   return (
     <img
