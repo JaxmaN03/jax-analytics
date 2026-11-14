@@ -107,22 +107,22 @@ Looking forward to your reply.
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[#112033] relative border-t border-slate-900">
+    <section id="contact" className="nasapunk-grid py-20 md:py-28 bg-[#101C32] relative border-t border-[#E3C581]/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1B263B] border border-[#D4AF37]/20 text-xs font-mono text-[#D4AF37] mb-4">
+        <div className="text-left max-w-4xl mb-16 border-l-2 border-[#E66C37] pl-5 sm:pl-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#243E60] border border-[#E3C581]/20 text-xs font-mono text-[#E3C581] mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Direct Client Inquiries</span>
+            <span>COMMUNICATIONS / INQUIRY TERMINAL 001</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="space-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#F3EBD9] tracking-tight mb-4">
             Let&apos;s Make Your Data Work for You.
           </h2>
-          <p className="text-base sm:text-lg text-[#BDB8AE] leading-relaxed mb-3">
+          <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed mb-3">
             Have a spreadsheet problem, reporting challenge, or automation idea? Tell me about your project and let&apos;s explore a solution.
           </p>
-          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-medium text-emerald-400">
+          <div className="inline-block px-4 py-2 border-l-2 border-[#E3C581] bg-[#243E60] text-xs font-mono tracking-wide text-[#E3C581]">
             Free initial project consultations available.
           </div>
         </div>
@@ -134,18 +134,18 @@ Looking forward to your reply.
           <div className="lg:col-span-5 space-y-6">
             
             {/* Direct Contact Card */}
-            <div className="rounded-2xl bg-[#1B263B] border border-slate-800 p-6 sm:p-7 shadow-xl">
+            <div className="rounded-sm bg-[#243E60] border border-slate-800 p-6 sm:p-7 shadow-xl">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <Mail className="w-5 h-5 text-[#D4AF37]" />
+                <Mail className="w-5 h-5 text-[#E3C581]" />
                 <span>Direct Contact Options</span>
               </h3>
-              <p className="text-xs text-[#BDB8AE] mb-6 leading-relaxed">
+              <p className="text-xs text-[#B9C8D8] mb-6 leading-relaxed">
                 Email Jackson directly, or use the form to prepare a project brief you can send.
               </p>
 
               {/* Email Address Display */}
-              <div className="p-4 rounded-xl bg-[#0D1B2A] border border-slate-800 mb-6 space-y-2">
-                <div className="flex items-center justify-between text-xs text-[#BDB8AE]">
+              <div className="p-4 rounded-sm bg-[#101C32] border border-slate-800 mb-6 space-y-2">
+                <div className="flex items-center justify-between text-xs text-[#B9C8D8]">
                   <span className="font-mono uppercase tracking-wider text-[10px]">Contact Email</span>
                 </div>
                 <div className="flex items-center justify-between gap-2">
@@ -155,7 +155,7 @@ Looking forward to your reply.
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-[#D4AF37] hover:text-white transition-colors shrink-0"
+                    className="p-1.5 rounded-sm bg-slate-800 hover:bg-slate-700 text-[#E3C581] hover:text-white transition-colors shrink-0"
                     title="Copy Email Address"
                     aria-label="Copy Email Address"
                   >
@@ -167,7 +167,7 @@ Looking forward to your reply.
               {/* Direct Mailto Button */}
               <a
                 href={`mailto:${SITE_CONFIG.contactEmail}?subject=Project%20Inquiry%20-%20Jax's%20Analytics`}
-                className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#0D1B2A] border border-slate-700 hover:border-[#D4AF37] text-xs font-semibold text-[#D4AF37] hover:text-white transition-all mb-4"
+                className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-sm bg-[#101C32] border border-slate-700 hover:border-[#E3C581] text-xs font-semibold text-[#E3C581] hover:text-white transition-all mb-4"
               >
                 <span>Email Jackson</span>
                 <ExternalLink className="w-3.5 h-3.5 ml-2" />
@@ -176,11 +176,11 @@ Looking forward to your reply.
               {/* Consultation Details */}
               <div className="space-y-3 pt-4 border-t border-slate-800/80 text-xs text-slate-300">
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                  <MapPin className="w-4 h-4 text-[#E3C581] shrink-0" />
                   <span>Tulsa, Oklahoma, USA (Central Time)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#91A4BC] shrink-0" />
+                  <Clock className="w-4 h-4 text-[#83B8D4] shrink-0" />
                   <span>Typically responds within 24 business hours</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -191,9 +191,9 @@ Looking forward to your reply.
             </div>
 
             {/* Why Reach Out */}
-            <div className="rounded-2xl bg-[#1B263B]/50 border border-slate-800 p-6 space-y-3">
+            <div className="rounded-sm bg-[#243E60]/50 border border-slate-800 p-6 space-y-3">
               <h4 className="text-sm font-semibold text-white">What Happens Next?</h4>
-              <ol className="space-y-2 text-xs text-[#BDB8AE] list-decimal list-inside">
+              <ol className="space-y-2 text-xs text-[#B9C8D8] list-decimal list-inside">
                 <li>I review your requirements, data formats, and goals.</li>
                 <li>We correspond by email or arrange a phone call by email.</li>
                 <li>We agree on a written scope and quote. Fixed-price projects are 50% upfront and 50% on delivery.</li>
@@ -205,12 +205,13 @@ Looking forward to your reply.
 
           {/* Right Column: Interactive Contact & Quote Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl bg-[#1B263B] border border-slate-800 p-6 sm:p-8 shadow-2xl relative">
+            <div className="rounded-sm bg-[#243E60] border border-slate-800 p-6 sm:p-8 shadow-2xl relative">
               
+              <div className="flex flex-wrap justify-between gap-2 border-b border-[#E3C581]/30 pb-4 mb-6 archive-label"><span>PROJECT TRANSMISSION / 001</span><span>CLIENT-INITIATED EMAIL</span></div>
               {submitted ? (
                 /* Post-Submission State */
                 <div className="py-6 text-center space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] flex items-center justify-center mx-auto text-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                  <div className="w-16 h-16 rounded-sm bg-[#E3C581]/20 border border-[#E3C581] flex items-center justify-center mx-auto text-[#E3C581] shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                     <Check className="w-8 h-8" />
                   </div>
 
@@ -218,20 +219,20 @@ Looking forward to your reply.
                     <h3 className="text-2xl font-bold text-white mb-2">
                       Project Brief Prepared!
                     </h3>
-                    <p className="text-sm text-[#BDB8AE] max-w-md mx-auto">
+                    <p className="text-sm text-[#B9C8D8] max-w-md mx-auto">
                       Your inquiry has not been sent. Open your email app and press Send, or copy the brief into an email addressed to Jackson.
                     </p>
                   </div>
 
                   {/* Formatted Brief Preview */}
-                  <div className="text-left bg-[#0D1B2A] rounded-xl border border-slate-800 p-4 font-mono text-xs text-slate-300 max-h-48 overflow-y-auto whitespace-pre-wrap">
+                  <div className="text-left bg-[#101C32] rounded-sm border border-slate-800 p-4 font-mono text-xs text-slate-300 max-h-48 overflow-y-auto whitespace-pre-wrap">
                     {generateEmailBody()}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a
                       href={getMailtoUrl()}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#D4AF37] text-black font-semibold text-sm hover:bg-[#E2C568] shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-sm bg-[#E3C581] text-black font-semibold text-sm hover:bg-[#F3EBD9] shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all"
                     >
                       <Mail className="w-4 h-4 mr-2" />
                       <span>Open in Email App</span>
@@ -240,7 +241,7 @@ Looking forward to your reply.
                     <button
                       type="button"
                       onClick={handleCopyBrief}
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-colors"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-sm bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-colors"
                     >
                       {copied ? (
                         <>
@@ -260,7 +261,7 @@ Looking forward to your reply.
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
-                      className="text-xs text-[#D4AF37] hover:underline"
+                      className="text-xs text-[#E3C581] hover:underline"
                     >
                       &larr; Edit Your Inquiry
                     </button>
@@ -274,7 +275,7 @@ Looking forward to your reply.
                     {/* Name */}
                     <div>
                       <label htmlFor="name" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Your Name <span className="text-[#D4AF37]">*</span>
+                        Your Name <span className="text-[#E3C581]">*</span>
                       </label>
                       <input
                         type="text"
@@ -284,7 +285,7 @@ Looking forward to your reply.
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Jane Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -300,7 +301,7 @@ Looking forward to your reply.
                         value={formData.businessName}
                         onChange={handleChange}
                         placeholder="Company or Practice LLC"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                       />
                     </div>
 
@@ -311,7 +312,7 @@ Looking forward to your reply.
                     {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Email Address <span className="text-[#D4AF37]">*</span>
+                        Email Address <span className="text-[#E3C581]">*</span>
                       </label>
                       <input
                         type="email"
@@ -321,21 +322,21 @@ Looking forward to your reply.
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="jane@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                       />
                     </div>
 
                     {/* Service Needed Dropdown */}
                     <div>
                       <label htmlFor="service" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                        Service Needed <span className="text-[#D4AF37]">*</span>
+                        Service Needed <span className="text-[#E3C581]">*</span>
                       </label>
                       <select
                         id="service"
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                       >
                         <option value="excel">Excel &amp; Spreadsheet Solutions (From $100)</option>
                         <option value="analysis">Data Analysis &amp; Visualization (From $250)</option>
@@ -348,19 +349,19 @@ Looking forward to your reply.
 
                   <div>
                     <label htmlFor="presentation" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Optional PowerPoint add-on</label>
-                    <select id="presentation" name="presentation" value={formData.presentation} onChange={handleChange} aria-describedby="presentation-scope" className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white text-sm focus:border-[#D4AF37] focus:outline-none">
+                    <select id="presentation" name="presentation" value={formData.presentation} onChange={handleChange} aria-describedby="presentation-scope" className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white text-sm focus:border-[#E3C581] focus:outline-none">
                       <option value="">No presentation add-on</option>
                       {PRESENTATION_ADDONS.map((addon) => <option key={addon.id} value={addon.id}>{addon.name} (+${addon.price} USD)</option>)}
                     </select>
-                    <p id="presentation-scope" className="text-xs text-[#BDB8AE] mt-2 leading-relaxed">Available with any service. Up to 10 slides, editable PowerPoint and PDF, and one revision round. Added to the main project price. {presentation ? `Additional slides: $${presentation.extraSlidePrice} each. ` : ''}Final scope and total confirmed before work begins.</p>
+                    <p id="presentation-scope" className="text-xs text-[#B9C8D8] mt-2 leading-relaxed">Available with any service. Up to 10 slides, editable PowerPoint and PDF, and one revision round. Added to the main project price. {presentation ? `Additional slides: $${presentation.extraSlidePrice} each. ` : ''}Final scope and total confirmed before work begins.</p>
                   </div>
 
-                  <details className="rounded-xl border border-slate-700 p-4">
+                  <details className="rounded-sm border border-slate-700 p-4">
                     <summary className="cursor-pointer text-sm font-semibold text-slate-200">Optional project arrangements</summary>
                     <div className="space-y-4 mt-4 text-sm text-slate-300">
-                      <label className="flex items-start gap-3"><input type="checkbox" name="exclusiveCode" checked={formData.exclusiveCode} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request exclusive rights to newly written project code <span className="block text-xs text-[#BDB8AE] mt-1">Separate quote and signed agreement. We define the code covered before work begins.</span></span></label>
-                      <label className="flex items-start gap-3"><input type="checkbox" name="extendedRetention" checked={formData.extendedRetention} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request longer file retention for future work <span className="block text-xs text-[#BDB8AE] mt-1">Default deletion is 30 days after completion. A longer period must be agreed in writing.</span></span></label>
-                      <a href="#data-handling" className="inline-flex min-h-11 items-center text-xs text-[#D4AF37] hover:underline">Read about file handling and code exclusivity</a>
+                      <label className="flex items-start gap-3"><input type="checkbox" name="exclusiveCode" checked={formData.exclusiveCode} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request exclusive rights to newly written project code <span className="block text-xs text-[#B9C8D8] mt-1">Separate quote and signed agreement. We define the code covered before work begins.</span></span></label>
+                      <label className="flex items-start gap-3"><input type="checkbox" name="extendedRetention" checked={formData.extendedRetention} onChange={handleChange} className="mt-1 accent-cyan-400" /><span>Request longer file retention for future work <span className="block text-xs text-[#B9C8D8] mt-1">Default deletion is 30 days after completion. A longer period must be agreed in writing.</span></span></label>
+                      <a href="#data-handling" className="inline-flex min-h-11 items-center text-xs text-[#E3C581] hover:underline">Read about file handling and code exclusivity</a>
                     </div>
                   </details>
 
@@ -374,7 +375,7 @@ Looking forward to your reply.
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                     >
                       <option value="Immediate / Within 1 week">Immediate / Within 1 week</option>
                       <option value="1-2 weeks">1-2 weeks</option>
@@ -386,7 +387,7 @@ Looking forward to your reply.
                   {/* Project Description */}
                   <div>
                     <label htmlFor="description" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                      Project Description <span className="text-[#D4AF37]">*</span>
+                      Project Description <span className="text-[#E3C581]">*</span>
                     </label>
                     <textarea
                       id="description"
@@ -396,7 +397,7 @@ Looking forward to your reply.
                       value={formData.description}
                       onChange={handleChange}
                       placeholder="Describe your current spreadsheets, reporting challenges, data volume, or desired automation outcomes..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#0D1B2A] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#D4AF37] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-sm bg-[#101C32] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-[#E3C581] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -404,7 +405,7 @@ Looking forward to your reply.
                   <div>
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl text-base font-bold text-black bg-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:bg-[#E2C568] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] active:scale-98 transition-all duration-200"
+                      className="w-full inline-flex items-center justify-center px-6 py-4 rounded-sm text-base font-bold text-[#101C32] bg-[#E3C581] shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:bg-[#F3EBD9] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] active:scale-98 transition-all duration-200"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       <span>Prepare Inquiry Email</span>
@@ -412,8 +413,8 @@ Looking forward to your reply.
                   </div>
 
                   {/* Note on Static Form Processing & Privacy */}
-                  <div className="flex items-start gap-2.5 p-3 rounded-xl bg-[#0D1B2A]/60 border border-slate-800 text-[11px] text-[#BDB8AE]">
-                    <Info className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-2.5 p-3 rounded-sm bg-[#101C32]/60 border border-slate-800 text-[11px] text-[#B9C8D8]">
+                    <Info className="w-4 h-4 text-[#E3C581] shrink-0 mt-0.5" />
                     <span>
                       This form prepares an email; it does not send your inquiry. On the next screen, open your email app or copy the brief, then send it to Jackson.
                     </span>
