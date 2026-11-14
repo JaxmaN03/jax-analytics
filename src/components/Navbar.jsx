@@ -3,6 +3,17 @@ import { Menu, X, ArrowRight, BarChart3 } from 'lucide-react';
 import { NAV_LINKS, PAGE_URLS } from '../navigation.js';
 import { SITE_CONFIG } from '../config.js';
 
+function RocketMark({ className = 'w-12 h-12' }) {
+  return <svg viewBox="0 0 120 132" className={className} role="img" aria-label="JA rocket emblem" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#E3C581" strokeWidth="2.5"><path d="M49 8 A52 52 0 0 0 12 88 M71 8 A52 52 0 0 1 108 88 M14 96 A52 52 0 0 0 39 112 M106 96 A52 52 0 0 1 81 112"/></g>
+    <path d="M60 1 L63 9 L71 12 L63 15 L60 23 L57 15 L49 12 L57 9Z M22 50 L24 55 L29 57 L24 59 L22 64 L20 59 L15 57 L20 55Z M98 50 L100 55 L105 57 L100 59 L98 64 L96 59 L91 57 L96 55Z" fill="#E3C581"/>
+    <path d="M60 18 L46 48 L34 64 L19 98 L42 80 L52 80 L60 71Z M60 18 L74 48 L86 64 L101 98 L78 80 L68 80 L60 71Z" fill="#F3EBD9"/>
+    <path d="M54 39 L54 70 Q54 82 41 85 L18 98 L45 92 Q62 88 62 72 L62 28Z M66 28 L66 92 L73 92 L73 69 L83 69 L90 76 L96 85 L105 98 L94 73 L86 61 L73 61 L73 39Z" fill="#F3EBD9"/>
+    <path d="M45 44 L22 86 L45 69Z M75 44 L98 86 L75 69Z M56 94 L49 112 L55 106 M64 94 L71 112 L65 106" fill="#E66C37"/>
+    <g fontFamily="monospace" fontWeight="bold" fontSize="10" textAnchor="middle"><text x="60" y="102" fill="#E3C581">1</text><text x="60" y="113" fill="#E66C37">0</text><text x="60" y="124" fill="#E3C581">1</text><text x="44" y="116" fill="#E3C581">0</text><text x="76" y="116" fill="#E3C581">0</text><text x="43" y="129" fill="#E66C37">1</text><text x="77" y="129" fill="#E66C37">1</text></g>
+  </svg>;
+}
+
 export default function Navbar({ onSelectService, currentPage }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,12 +57,7 @@ export default function Navbar({ onSelectService, currentPage }) {
             className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#E3C581] rounded-sm p-1"
             aria-label="Jax's Analytics Home"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-sm bg-gradient-to-br from-[#1B263B] to-[#101C32] border border-[#E3C581]/40 group-hover:border-[#E3C581] shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-300">
-              <span className="font-mono font-extrabold text-sm tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#E3C581] to-[#91A4BC]">
-                JA
-              </span>
-              <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#E3C581] rounded-full animate-pulse" />
-            </div>
+            <RocketMark className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 group-hover:scale-105 transition-transform" />
             <div className="flex flex-col">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white group-hover:text-[#E3C581] transition-colors">
                 JAX&apos;S ANALYTICS
