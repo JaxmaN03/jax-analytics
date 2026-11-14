@@ -42,13 +42,13 @@ export default function Hero({ onStartProject }) {
         </div>
         <div className="grid lg:grid-cols-12 items-center gap-8 lg:gap-4 py-12 sm:py-16 lg:py-24">
           <div className="lg:col-span-7 relative z-10">
-            <div className="flex items-center gap-3 mb-7"><span className="w-9 h-px bg-[#E3C581]"/><span className="archive-label">A NEW PERSPECTIVE ON DATA</span></div>
-            <h1 className="space-heading text-[clamp(3.5rem,8vw,7.5rem)] leading-[.91] tracking-[-.055em] text-[#F3EBD9] mb-8">
-              THE FUTURE<br/>IS <em className="not-italic text-[#E3C581]">CLEAR.</em>
+            <div className="flex items-center gap-3 mb-7"><span className="w-9 h-px bg-[#E3C581]"/><span className="archive-label">THE FUTURE IS CLEAR / A NEW PERSPECTIVE ON DATA</span></div>
+            <h1 className="space-heading text-[clamp(2.8rem,6.1vw,6rem)] leading-[.91] tracking-[-.055em] text-[#F3EBD9] mb-8">
+              MAKING DATA<br/><em className="not-italic text-[#E3C581]">SIMPLE,</em><br/>ACCESSIBLE &amp;<br/>ACTIONABLE.
             </h1>
             <p className="text-xl sm:text-2xl text-[#F3EBD9] font-medium mb-4">{SITE_CONFIG.tagline}</p>
             <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed max-w-xl mb-9">
-              Excel solutions, insightful reporting, and practical automation. We turn complicated information into tools that help your business move forward.
+              For everyone. We transform complex information into clear insights and practical solutions, helping people and businesses work smarter.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <button type="button" onClick={()=>onStartProject?.('excel')} className="space-cta inline-flex items-center justify-center gap-3 px-7 py-4 font-semibold text-[#101C32] bg-[#E3C581] hover:bg-[#F3EBD9] transition-colors">
