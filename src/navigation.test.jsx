@@ -18,7 +18,7 @@ describe('Separate website pages', () => {
     render(<App />);
     expect(screen.getByRole('link', { name: /view case study: understanding your nonprofit/i })).toHaveAttribute('href', '/nonprofit-case-study.html');
     expect(screen.getByRole('link', { name: /view case study: excel data cleanup/i })).toHaveAttribute('href', '/reporting-case-study.html');
-    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+    expect(screen.getAllByRole('table')).toHaveLength(2);
     expect(screen.queryByRole('button', { name: 'Donor locations' })).not.toBeInTheDocument();
   });
 
