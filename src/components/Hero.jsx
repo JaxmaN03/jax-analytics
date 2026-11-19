@@ -48,7 +48,7 @@ export default function Hero({ onStartProject }) {
             </h1>
             <p className="text-xl sm:text-2xl text-[#F3EBD9] font-medium mb-4">{SITE_CONFIG.tagline}</p>
             <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed max-w-xl mb-9">
-              For everyone. We transform complex information into clear insights and practical solutions, helping people and businesses work smarter.
+              We work to turn complex information into clear insights and practical solutions, helping people and businesses work smarter.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <button type="button" onClick={()=>onStartProject?.('excel')} className="space-cta inline-flex items-center justify-center gap-3 px-7 py-4 font-semibold text-[#101C32] bg-[#E3C581] hover:bg-[#F3EBD9] transition-colors">
