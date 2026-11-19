@@ -16,51 +16,51 @@ export default function NonprofitDemo({ onDiscussProject }) {
   const rows = demo[view].map((row) => ({ ...row, name: row.name ?? String(row.year) }));
   const max = Math.max(...rows.map((row) => row.total));
   return (
-    <article id="nonprofit-case-study" aria-labelledby="nonprofit-title" className="rounded-2xl bg-[#1B263B] border border-[#91A4BC]/40 p-6 sm:p-8 mb-10 scroll-mt-24">
-      <p className="text-sm font-semibold text-violet-300 mb-3">Nonprofit specialty · Fictional data demonstration</p>
-      <h3 id="nonprofit-title" className="text-2xl sm:text-3xl font-bold text-white mb-3">Understanding Your Nonprofit Supporters</h3>
-      <p className="text-slate-300 leading-relaxed max-w-4xl">Who are your biggest supporters, where are they coming from, and how is their giving changing? This example turns donor records into a clear starting point for stewardship and outreach planning.</p>
-      <p className="text-sm text-[#BDB8AE] mt-3">An original example for a fictional Oklahoma nonprofit. Every donor and amount is synthetic. No client or employer records are included.</p>
+    <article id="nonprofit-case-study" aria-labelledby="nonprofit-title" className="rounded-sm bg-[#243E60] border border-[#E3C581]/25 p-6 sm:p-8 mb-10 scroll-mt-24">
+      <p className="text-xs font-mono uppercase tracking-wider text-[#E3C581] mb-3">Nonprofit specialty · Fictional data demonstration</p>
+      <h3 id="nonprofit-title" className="space-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-[#F3EBD9] tracking-tight mb-4">Understanding Your Nonprofit Supporters</h3>
+      <p className="text-[#B9C8D8] leading-relaxed max-w-4xl">Who are your biggest supporters, where are they coming from, and how is their giving changing? This example turns donor records into a clear starting point for stewardship and outreach planning.</p>
+      <p className="text-sm text-[#B9C8D8] mt-3">An original example for a fictional Oklahoma nonprofit. Every donor and amount is synthetic. No client or employer records are included.</p>
       <dl className="grid sm:grid-cols-3 gap-4 my-7">
-        {[[`${demo.donors}`, 'Fictional donors'], [money(demo.total), '2025 giving (USD)'], [percent(demo.topFiveShare), '2025 giving from the top five donors']].map(([value, label]) => <div key={label} className="rounded-xl bg-[#0D1B2A] p-4 border border-slate-800"><dt className="text-xs text-[#BDB8AE] mb-2">{label}</dt><dd className="text-2xl font-bold text-white">{value}</dd></div>)}
+        {[[`${demo.donors}`, 'Fictional donors'], [money(demo.total), '2025 giving (USD)'], [percent(demo.topFiveShare), '2025 giving from the top five donors']].map(([value, label]) => <div key={label} className="rounded-sm bg-[#101C32] p-4 border border-slate-800"><dt className="text-xs text-[#B9C8D8] mb-2">{label}</dt><dd className="text-2xl font-bold text-[#F3EBD9]">{value}</dd></div>)}
       </dl>
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
-        <div><h4 className="font-semibold text-white mb-2">The question behind the analysis</h4><p className="text-sm text-slate-300 leading-relaxed">Nonprofits need to understand who is supporting their work so they can focus their efforts properly. A useful report connects donor groups, giving history, and outreach sources while keeping the underlying records available for review.</p></div>
-        <div><h4 className="font-semibold text-white mb-2">What this example reveals</h4><p className="text-sm text-slate-300 leading-relaxed">The five largest donors contribute {money(demo.topFiveTotal)} of the {money(demo.total)} recorded in 2025. Tulsa accounts for {money(demo.cities.find((row) => row.name === 'Tulsa').total)}. Giving across the sample rises {percent(demo.growth)} between 2023 and 2025. These are fictional findings, not actual fundraising results.</p></div>
+        <div><h4 className="font-semibold text-[#F3EBD9] mb-2">The question behind the analysis</h4><p className="text-sm text-[#B9C8D8] leading-relaxed">Nonprofits need to understand who is supporting their work so they can focus their efforts properly. A useful report connects donor groups, giving history, and outreach sources while keeping the underlying records available for review.</p></div>
+        <div><h4 className="font-semibold text-[#F3EBD9] mb-2">What this example reveals</h4><p className="text-sm text-[#B9C8D8] leading-relaxed">The five largest donors contribute {money(demo.topFiveTotal)} of the {money(demo.total)} recorded in 2025. Tulsa accounts for {money(demo.cities.find((row) => row.name === 'Tulsa').total)}. Giving across the sample rises {percent(demo.growth)} between 2023 and 2025. These are fictional findings, not actual fundraising results.</p></div>
       </div>
-      <div className="rounded-xl bg-[#0D1B2A] border border-slate-800 p-4 sm:p-6 mb-8">
+      <div className="rounded-sm bg-[#101C32] border border-slate-800 p-4 sm:p-6 mb-8">
         <div role="group" aria-label="Nonprofit analysis views" className="flex flex-wrap gap-2 mb-6">
-          {Object.entries(views).map(([id, item]) => <button key={id} type="button" aria-pressed={view === id} aria-controls="nonprofit-results" onClick={() => setView(id)} className={`min-h-11 rounded-lg border px-3 py-2 text-sm font-medium ${view === id ? 'text-[#D4AF37] border-[#D4AF37]/50 bg-[#D4AF37]/10' : 'text-slate-300 border-slate-700 hover:border-slate-500'}`}>{item.label}</button>)}
+          {Object.entries(views).map(([id, item]) => <button key={id} type="button" aria-pressed={view === id} aria-controls="nonprofit-results" onClick={() => setView(id)} className={`min-h-11 rounded-sm border px-3 py-2 text-sm font-medium ${view === id ? 'text-[#E3C581] border-[#E3C581]/50 bg-[#E3C581]/10' : 'text-[#B9C8D8] border-slate-700 hover:border-slate-500'}`}>{item.label}</button>)}
         </div>
         <div id="nonprofit-results" role="region" aria-labelledby="nonprofit-view-heading">
-          <h4 id="nonprofit-view-heading" className="text-lg font-semibold text-white mb-4">{views[view].heading}</h4>
-          <p className="text-xs text-[#BDB8AE] mb-4">{view === 'years' ? 'Annual giving, 2023–2025' : '2025 giving by group'} · USD · Fictional data</p>
+          <h4 id="nonprofit-view-heading" className="text-lg font-semibold text-[#F3EBD9] mb-4">{views[view].heading}</h4>
+          <p className="text-xs text-[#B9C8D8] mb-4">{view === 'years' ? 'Annual giving, 2023–2025' : '2025 giving by group'} · USD · Fictional data</p>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <caption className="sr-only">{views[view].label}: fictional giving totals</caption>
-              <thead className="text-xs text-[#BDB8AE]"><tr><th scope="col" className="py-2 pr-4">{view === 'years' ? 'Year' : 'Group'}</th>{view !== 'years' && <th scope="col" className="py-2 pr-4 text-right">Donors</th>}<th scope="col" className="py-2 text-right">Giving</th></tr></thead>
-              <tbody>{rows.map((row) => <tr key={row.name} className="border-t border-slate-800"><th scope="row" className="py-4 pr-4 font-medium text-slate-200"><span>{row.name}</span><span aria-hidden="true" className="block h-1.5 mt-2 rounded-full bg-[#91A4BC]" style={{ width: `${row.total / max * 100}%` }} /></th>{view !== 'years' && <td className="py-4 pr-4 text-right text-slate-300">{row.donors}</td>}<td className="py-4 text-right text-[#D4AF37] font-mono whitespace-nowrap">{money(row.total)}</td></tr>)}</tbody>
+              <thead className="text-xs text-[#B9C8D8]"><tr><th scope="col" className="py-2 pr-4">{view === 'years' ? 'Year' : 'Group'}</th>{view !== 'years' && <th scope="col" className="py-2 pr-4 text-right">Donors</th>}<th scope="col" className="py-2 text-right">Giving</th></tr></thead>
+              <tbody>{rows.map((row) => <tr key={row.name} className="border-t border-slate-800"><th scope="row" className="py-4 pr-4 font-medium text-slate-200"><span>{row.name}</span><span aria-hidden="true" className="block h-1.5 mt-2 rounded-full bg-[#83B8D4]" style={{ width: `${row.total / max * 100}%` }} /></th>{view !== 'years' && <td className="py-4 pr-4 text-right text-[#B9C8D8]">{row.donors}</td>}<td className="py-4 text-right text-[#E3C581] font-mono whitespace-nowrap">{money(row.total)}</td></tr>)}</tbody>
             </table>
           </div>
-          <p className="text-xs text-[#BDB8AE] leading-relaxed mt-4">{views[view].note}</p>
+          <p className="text-xs text-[#B9C8D8] leading-relaxed mt-4">{views[view].note}</p>
         </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-6 items-start">
         <div>
-          <h4 className="text-lg font-semibold text-white mb-3">From findings to a presentation</h4>
-          <p className="text-sm text-slate-300 leading-relaxed mb-4">The six-slide sample deck presents the same calculations in a format a nonprofit team can discuss. It includes donor generations, locations and outreach sources, giving trends, the largest supporters, and questions for planning the next steps.</p>
-          <p className="text-sm text-slate-300 leading-relaxed mb-4">For your project, we agree on the donor definitions, reporting period, and questions first. The analysis can include a cleaned workbook and written findings. Add a presentation using your template or a new design.</p>
+          <h4 className="text-lg font-semibold text-[#F3EBD9] mb-3">From findings to a presentation</h4>
+          <p className="text-sm text-[#B9C8D8] leading-relaxed mb-4">The six-slide sample deck presents the same calculations in a format a nonprofit team can discuss. It includes donor generations, locations and outreach sources, giving trends, the largest supporters, and questions for planning the next steps.</p>
+          <p className="text-sm text-[#B9C8D8] leading-relaxed mb-4">For your project, we agree on the donor definitions, reporting period, and questions first. The analysis can include a cleaned workbook and written findings. Add a presentation using your template or a new design.</p>
           <div className="flex flex-wrap gap-3 mb-4">
-            <a download href={`${import.meta.env.BASE_URL}downloads/nonprofit-supporter-analysis.pptx`} className="inline-flex min-h-11 items-center rounded-lg border border-slate-600 px-4 py-3 text-sm font-semibold text-[#D4AF37] hover:border-[#D4AF37]">Download Sample PowerPoint</a>
-            <a href={`${import.meta.env.BASE_URL}downloads/nonprofit-supporter-analysis.pdf`} className="inline-flex min-h-11 items-center rounded-lg border border-slate-600 px-4 py-3 text-sm font-semibold text-[#D4AF37] hover:border-[#D4AF37]">View Sample PDF</a>
+            <a download href={`${import.meta.env.BASE_URL}downloads/nonprofit-supporter-analysis.pptx`} className="inline-flex min-h-11 items-center rounded-sm border border-slate-600 px-4 py-3 text-sm font-semibold text-[#E3C581] hover:border-[#E3C581]">Download Sample PowerPoint</a>
+            <a href={`${import.meta.env.BASE_URL}downloads/nonprofit-supporter-analysis.pdf`} className="inline-flex min-h-11 items-center rounded-sm border border-slate-600 px-4 py-3 text-sm font-semibold text-[#E3C581] hover:border-[#E3C581]">View Sample PDF</a>
           </div>
-          <p className="text-xs text-[#BDB8AE] leading-relaxed mb-5">PowerPoint charts are editable. The PDF is a static preview. <a download href={`${import.meta.env.BASE_URL}downloads/nonprofit-fictional-data.json`} className="text-[#D4AF37] underline">Inspect the fictional source data (JSON)</a>.</p>
-          <button type="button" onClick={onDiscussProject} className="inline-flex min-h-11 items-center rounded-lg bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-black hover:bg-[#E2C568]">Discuss your nonprofit data</button>
-          <a href={`${PAGE_URLS.services}#presentation-addon`} className="block mt-4 text-sm text-[#D4AF37] hover:underline">See presentation add-on pricing</a>
+          <p className="text-xs text-[#B9C8D8] leading-relaxed mb-5">PowerPoint charts are editable. The PDF is a static preview. <a download href={`${import.meta.env.BASE_URL}downloads/nonprofit-fictional-data.json`} className="text-[#E3C581] underline">Inspect the fictional source data (JSON)</a>.</p>
+          <button type="button" onClick={onDiscussProject} className="inline-flex min-h-11 items-center space-cta bg-[#E3C581] px-5 py-3 text-sm font-semibold text-[#101C32] hover:bg-[#F3EBD9]">Discuss your nonprofit data</button>
+          <a href={`${PAGE_URLS.services}#presentation-addon`} className="block mt-4 text-sm text-[#E3C581] hover:underline">See presentation add-on pricing</a>
         </div>
         <figure>
-          <img loading="lazy" src={`${import.meta.env.BASE_URL}images/nonprofit-presentation-preview.png`} width="1280" height="720" alt="Sample presentation slide with 2025 fictional giving by donor location and acquisition channel." className="w-full h-auto rounded-xl border border-slate-700" />
-          <figcaption className="text-xs text-[#BDB8AE] mt-3">Slide 3 from the downloadable sample. All amounts are fictional.</figcaption>
+          <img loading="lazy" src={`${import.meta.env.BASE_URL}images/nonprofit-presentation-preview.png`} width="1280" height="720" alt="Sample presentation slide with 2025 fictional giving by donor location and acquisition channel." className="w-full h-auto rounded-sm border border-slate-700" />
+          <figcaption className="text-xs text-[#B9C8D8] mt-3">Slide 3 from the downloadable sample. All amounts are fictional.</figcaption>
         </figure>
       </div>
     </article>

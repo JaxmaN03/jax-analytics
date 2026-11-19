@@ -50,7 +50,7 @@ export default function Portfolio({ onDiscussProject }) {
             <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
             <p className="text-sm text-slate-300 leading-relaxed mb-4 flex-1">{project.description}</p>
             <p className="text-xs text-[#B9C8D8] mb-6">{project.detail}</p>
-            <a href={CASE_STUDY_URLS[project.id]} aria-label={`View case study: ${project.title}`} className="inline-flex min-h-11 items-center justify-center rounded-sm bg-[#E3C581]/10 border border-[#E3C581]/30 px-4 py-3 text-sm font-semibold text-[#E3C581] hover:bg-[#E3C581]/20">View Case Study <ArrowUpRight aria-hidden="true" className="w-4 h-4 ml-2" /></a>
+            <a href={CASE_STUDY_URLS[project.id]} aria-label={`View case study: ${project.title}`} className="inline-flex min-h-11 items-center justify-center space-cta bg-[#E3C581] px-4 py-3 text-sm font-semibold text-[#101C32] hover:bg-[#F3EBD9] transition-colors">View Case Study <ArrowUpRight aria-hidden="true" className="w-4 h-4 ml-2" /></a>
           </article>)}
         </div>
         {/* Upcoming project concepts */}
