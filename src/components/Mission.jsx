@@ -23,11 +23,11 @@ export default function Mission() {
           </div>
           <div className="lg:col-span-9">
             <h2 id="mission-heading" className="space-heading text-[clamp(2.5rem,5.5vw,5.5rem)] leading-[1.05] tracking-[-.045em] max-w-4xl">
-              YOUR DATA HAS A STORY. <span className="text-[#285B80]">LET’S MAKE IT USEFUL.</span>
+              There are so many insights hidden in your data. <span className="text-[#285B80]">Let’s find them!</span>
             </h2>
             <div className="mt-9 grid md:grid-cols-2 gap-7 md:gap-12 items-end">
               <p className="text-lg leading-relaxed text-[#243E60]">
-                From untangling spreadsheets to building practical reporting tools, I help turn scattered information into answers you can actually use. No unnecessary complexity—just clearer decisions and more time for what matters.
+                From organizing spreadsheets to building practical tools for reporting, we help you turn messy information into data you can actually use. No unnecessary complexity - just easy decisions that give you more time for what matters.
               </p>
               <a href={PAGE_URLS.about} className="inline-flex items-center gap-3 w-fit border-b border-[#243E60] pb-2 font-semibold tracking-wide hover:text-[#E66C37] transition-colors">
                 THE STORY BEHIND JAX'S <ArrowUpRight size={19}/>
