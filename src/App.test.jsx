@@ -3,7 +3,7 @@ import { render, screen, fireEvent, within } from '@testing-library/react';
 import App from './App.jsx';
 import { navigate } from './navigation.js';
 vi.mock('./navigation.js', async (importOriginal) => ({ ...(await importOriginal()), navigate: vi.fn() }));
-import { SITE_CONFIG, SERVICES, PORTFOLIO_PROJECTS, ABOUT_INFO } from './config.js';
+import { SITE_CONFIG, SERVICES, ABOUT_INFO } from './config.js';
 
 describe('Jax\'s Analytics Website', () => {
   beforeEach(() => {
@@ -106,35 +106,31 @@ describe('Jax\'s Analytics Website', () => {
       expect(navigate).toHaveBeenCalledWith('/contact.html?service=analysis');
     });
 
-    it('renders two planned projects and a downloadable reporting tool', () => {
+    it('renders two interactive demos and a downloadable reporting tool', () => {
       render(<App />);
       expect(screen.getByText('Business Financial Dashboard')).toBeInTheDocument();
       expect(screen.getByText('Property Management Analytics')).toBeInTheDocument();
       expect(screen.getByText('Excel Data Cleanup & Reporting Tool')).toBeInTheDocument();
       expect(screen.getByRole('link', { name: /view case study: excel data cleanup/i })).toHaveAttribute('href', '/reporting-case-study.html');
-
-      const comingSoonBadges = screen.getAllByText('Coming Soon');
-      expect(comingSoonBadges.length).toBe(2);
     });
 
-    it('includes attractive preview illustrations with fictional data labels', () => {
+    it('labels the demo data as fictional', () => {
       render(<App />);
       const fictionalDataLabels = screen.getAllByText(/fictional data/i);
       expect(fictionalDataLabels.length).toBeGreaterThanOrEqual(2);
     });
 
-    it('allows opening concept architecture modal without fake download links', () => {
+    it('updates financial results and property metrics when filters change', () => {
       render(<App />);
-      const exploreBtns = screen.getAllByRole('button', { name: /explore concept architecture/i });
-      expect(exploreBtns.length).toBe(2);
+      expect(screen.getByText('$7,800')).toBeInTheDocument();
+      fireEvent.change(screen.getByLabelText('Reporting month'), { target: { value: '1' } });
+      expect(screen.getByText('$10,400')).toBeInTheDocument();
 
-      fireEvent.click(exploreBtns[0]);
-      expect(screen.getByRole('dialog')).toBeInTheDocument();
-      expect(screen.getByText(/core architectural capabilities/i)).toBeInTheDocument();
-
-      const closeBtn = screen.getByRole('button', { name: /close concept preview/i });
-      fireEvent.click(closeBtn);
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      const propertyTable = screen.getByRole('table', { name: 'Monthly property snapshot' });
+      expect(within(propertyTable).getByText('Oak Court')).toBeInTheDocument();
+      fireEvent.change(screen.getByLabelText('Property'), { target: { value: 'Maple Row' } });
+      expect(within(propertyTable).queryByText('Oak Court')).not.toBeInTheDocument();
+      expect(screen.getByText('81.3%')).toBeInTheDocument();
     });
   });
 
