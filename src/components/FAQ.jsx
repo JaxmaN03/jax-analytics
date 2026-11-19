@@ -13,12 +13,21 @@ const questions = [
 
 export default function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-20 bg-[#0D1B2A] border-t border-slate-900 scroll-mt-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4">A few things you might be wondering</h2>
-        <p className="text-[#BDB8AE] leading-relaxed mb-8">Here is what to expect when we work together.</p>
-        <div className="divide-y divide-slate-800">
-          {questions.map(([question, answer]) => <details key={question} className="py-5 group"><summary className="cursor-pointer text-base font-semibold text-slate-200 hover:text-[#D4AF37] py-1">{question}</summary><p className="text-sm text-[#BDB8AE] leading-relaxed mt-4">{answer}</p></details>)}
+    <section id="faq" aria-labelledby="faq-heading" className="py-20 md:py-28 bg-[#101C32] border-t border-[#E3C581]/20 scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mb-12 border-l-2 border-[#E3C581] pl-6">
+          <h2 id="faq-heading" className="space-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase text-[#F3EBD9] tracking-tight mb-4">A few things you might be wondering</h2>
+          <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed">Here is what to expect when we work together.</p>
+        </div>
+        <div className="max-w-4xl space-y-3">
+          {questions.map(([question, answer]) => (
+            <details key={question} className="rounded-sm border border-[#E3C581]/25 bg-[#243E60] open:border-[#E3C581]/50">
+              <summary className="min-h-11 cursor-pointer px-5 py-4 font-semibold text-[#F3EBD9] marker:text-[#E3C581] hover:text-[#E3C581] focus-visible:outline-2 focus-visible:outline-[#E3C581] sm:px-6">
+                {question}
+              </summary>
+              <p className="px-5 pb-5 text-sm leading-relaxed text-[#B9C8D8] sm:px-6 sm:text-base">{answer}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
