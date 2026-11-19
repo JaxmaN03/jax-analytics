@@ -33,10 +33,10 @@ export default function Services({ onSelectService, onSelectPresentation }) {
             <span>MISSION CATALOG / 001</span>
           </div>
           <h2 className="space-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase text-[#F3EBD9] tracking-tight mb-4">
-            Practical Tools. Clearer Horizons.
+            Practical Tools. Clearer Solutions.
           </h2>
           <p className="text-base sm:text-lg text-[#B9C8D8] leading-relaxed">
-            Fix your spreadsheet, understand your performance, or automate a recurring report. Check out our services below to see what works best for your business.
+            Fix your spreadsheet, understand your performance, or automate a recurring report. Check out our services below to see what works best for you.
           </p>
         </div>
 
