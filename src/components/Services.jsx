@@ -145,6 +145,16 @@ export default function Services({ onSelectService, onSelectPresentation }) {
           <p className="text-xs text-[#B9C8D8] mt-3 leading-relaxed">Prices are added to your main service quote. New analysis, major changes to the brief, advanced animation, and live presentation delivery are quoted separately. We confirm your audience, source data, branding, slide count, and total price before work begins.</p>
         </div>
 
+        <div className="mb-12 border-l-2 border-[#E3C581]/40 pl-5">
+          <h3 className="mb-2 text-xl font-bold text-[#F3EBD9]">Need a website, too?</h3>
+          <p className="max-w-3xl text-sm leading-relaxed text-[#B9C8D8] sm:text-base">
+            We build websites for small businesses and nonprofits, too. We built this site from scratch, so you can see an example right here.
+          </p>
+          <button type="button" onClick={() => handleRequestQuote('other')} className="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-[#E3C581] hover:underline">
+            Tell us about your website
+          </button>
+        </div>
+
         {/* Pricing Transparency & Scope Notice */}
         <div className="max-w-3xl mx-auto rounded-sm bg-[#243E60]/60 border border-slate-800 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
